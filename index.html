@@ -13,7 +13,7 @@
 
       <script>
         $(function() {
-          setupLanguages(["shell","javascript"]);
+          setupLanguages(["javascript","shell"]);
         });
       </script>
   </head>
@@ -28,8 +28,8 @@
     <div class="tocify-wrapper">
       <img src="images/logo.png" />
         <div class="lang-selector">
-              <a href="#" data-language-name="shell">Shell</a>
-              <a href="#" data-language-name="javascript">NodeJS</a>
+              <a href="#" data-language-name="javascript">nodejs</a>
+              <a href="#" data-language-name="shell">shell</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -38,7 +38,6 @@
       <div id="toc">
       </div>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
             <li><a href='http://github.com/tripit/slate'>Documentation Powered by Slate</a></li>
         </ul>
     </div>
@@ -46,23 +45,36 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Tagplay API! You can use our API to access Tagplay API endpoint.</p>
+<p>Welcome to the Tagplay API! You can use our API to programmatically access the Tagplay product.</p>
 
-          <h1 id='data-objects'>Data Objects</h1>
-<p>All API calls reply with a root object.
-Resulting Data from query will be found under the <code class="prettyprint">data</code> attrubute.</p>
-<pre><code class="highlight json"><span class="p">{</span><span class="w">
+<p>With Tagplay, you can post your content on social media to update your website automatically.</p>
+
+<p>Update your content with Facebook Pages &amp; Profiles, Instagram, Twitter and email.
+You can also use any social media management or content management tools of your choice.
+We redirect your content when it shares to social media.</p>
+
+<p>You can use a certain #tag from one of your social media profiles to control which content goes
+where on your website.</p>
+
+          <h1 id='data-objects'>Data Objects</h1><pre><code class="highlight json"><span class="p">{</span><span class="w">
     </span><span class="s2">"pagination"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
         </span><span class="s2">"offset"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
         </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">505</span><span class="p">,</span><span class="w">
         </span><span class="s2">"previous_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/v1/project?offset=0"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"next_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/v1/project?offset=40"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
+    </span><span class="p">},</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="err">Object</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="err">Array</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<h2 id='image'>Image</h2><pre><code class="highlight json"><span class="p">{</span><span class="w">
+
+<p>All API calls reply with a root object.
+Resulting Data from query will be found under the <code class="prettyprint">data</code> attribute of that object.</p>
+
+<p>If the data is an array a <code class="prettyprint">pagination</code> object will appear in the root describing pegination details.</p>
+
+<aside class="warning">Note that previous_url, and next_url will only appear when there are results in those pages.</aside>
+<h2 id='media'>Media</h2><pre><code class="highlight json"><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10f85f52-9e61-11e4-82fd-20c9d08a778d"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"sources"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
@@ -79,42 +91,83 @@ Resulting Data from query will be found under the <code class="prettyprint">data
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
-<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-
-<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-<h2 id='location'>Location</h2><pre><code class="highlight json"><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"06306e52-9e61-11e4-8f6c-20c9d08a778d"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">64.145654171</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-21.929342059</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tagplay"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"instagram"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"provider_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"95537308"</span><span class="w">
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>Unique UUID for the Media</td>
+</tr>
+<tr>
+<td>sources</td>
+<td>Array</td>
+<td>Array of Objects describing different sizes of the Media</td>
+</tr>
+<tr>
+<td><em>sources[]</em>.id</td>
+<td>String</td>
+<td>UUID of the Media</td>
+</tr>
+<tr>
+<td><em>sources[]</em>.height</td>
+<td>Integer</td>
+<td>Height of the Media</td>
+</tr>
+<tr>
+<td><em>sources[]</em>.width</td>
+<td>Integer</td>
+<td>Width of the Media</td>
+</tr>
+<tr>
+<td><em>sources[]</em>.url</td>
+<td>String</td>
+<td>URL to the Media</td>
+</tr>
+</tbody></table>
+<h2 id='provider'>Provider</h2><pre><code class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="s2">"added_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-11-05T15:48:24.560047"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"instagram"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example_user"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
-<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-
-<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>Name of the Provider</td>
+</tr>
+<tr>
+<td>added_time</td>
+<td>JSONDate</td>
+<td>Time the item was added <em>to the Provider</em></td>
+</tr>
+<tr>
+<td>username</td>
+<td>String</td>
+<td>Username of the user who posted to the Provider</td>
+</tr>
+</tbody></table>
 <h2 id='post'>Post</h2><pre><code class="highlight json"><span class="p">{</span><span class="w">
-    </span><span class="s2">"provider"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"added_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-11-05T15:48:24.560047"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"instagram"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example_user"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"provider"</span><span class="p">:</span><span class="w"> </span><span class="err">ProviderObject</span><span class="p">,</span><span class="w">
     </span><span class="s2">"created_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-11-05T15:48:23"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0020bad0-9e61-11e4-bf88-20c9d08a778d"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Selfie at #tagplay"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"normalized_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Selfie at tagplay"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"stripped_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Selfie at"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="err">LocationObject</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="err">ImageObject</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="err">MediaObject</span><span class="p">,</span><span class="w">
     </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"tagplay"</span><span class="w"> </span><span class="p">],</span><span class="w">
     </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"pinned"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
@@ -128,13 +181,99 @@ aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi 
 
 </span></code></pre>
 
-<p>Media describes a simple media image. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua.
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
-<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-
-<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>Unique UUID for the Post</td>
+</tr>
+<tr>
+<td>type</td>
+<td>String</td>
+<td>Type of the Post</td>
+</tr>
+<tr>
+<td>created_time</td>
+<td>JSONDate</td>
+<td>Time the Post was created</td>
+</tr>
+<tr>
+<td>provider</td>
+<td><a href="#provider">Provider</a></td>
+<td>Provider info.</td>
+</tr>
+<tr>
+<td>text</td>
+<td>String</td>
+<td>The original text</td>
+</tr>
+<tr>
+<td>normalized_text</td>
+<td>String</td>
+<td>Normalized version of the text</td>
+</tr>
+<tr>
+<td>stripped_text</td>
+<td>String</td>
+<td>Stripped version of the text</td>
+</tr>
+<tr>
+<td>image</td>
+<td><a href="#media">Media</a></td>
+<td>Linked image</td>
+</tr>
+<tr>
+<td>video</td>
+<td><a href="#media">Media</a></td>
+<td>Linked video</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>Array</td>
+<td>Arrays of tag strings</td>
+</tr>
+<tr>
+<td>meta</td>
+<td>Object</td>
+<td>Object of meta information</td>
+</tr>
+<tr>
+<td><em>meta</em>.pinned</td>
+<td>Boolean</td>
+<td>Is the Post pinned to the top of the feed</td>
+</tr>
+<tr>
+<td><em>meta</em>.removed</td>
+<td>Boolean</td>
+<td>Has the Post been removed</td>
+</tr>
+<tr>
+<td><em>meta</em>.likes</td>
+<td>Integer</td>
+<td>Number of likes</td>
+</tr>
+<tr>
+<td><em>meta</em>.flags</td>
+<td>Integer</td>
+<td>Number of flags</td>
+</tr>
+<tr>
+<td><em>meta</em>.has_liked</td>
+<td>Boolean</td>
+<td>Have you like it?</td>
+</tr>
+<tr>
+<td><em>meta</em>.has_flagged</td>
+<td>Boolean</td>
+<td>Have you flagged it?</td>
+</tr>
+</tbody></table>
 <h2 id='feed'>Feed</h2><pre><code class="highlight json"><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a10b01ac-c1e7-495b-acfb-93f1a10dac16"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Graphs"</span><span class="p">,</span><span class="w">
@@ -147,73 +286,102 @@ Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqu
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
-<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-
-<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>Unique UUID for the Feed</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>The name of the Feed</td>
+</tr>
+<tr>
+<td>public_media_count</td>
+<td>Integer</td>
+<td>Number of items in the feed</td>
+</tr>
+<tr>
+<td>preview_media</td>
+<td>Object</td>
+<td>Preview media object</td>
+</tr>
+<tr>
+<td><em>preview_media</em>.id</td>
+<td>String</td>
+<td>id of the <a href="#post">Post</a> the media is from</td>
+</tr>
+<tr>
+<td><em>preview_media</em>.image</td>
+<td>String</td>
+<td>URI of the media</td>
+</tr>
+<tr>
+<td><em>preview_media</em>.text</td>
+<td>String</td>
+<td>Text from the <a href="#post">Post</a>.</td>
+</tr>
+</tbody></table>
 <h2 id='project'>Project</h2><pre><code class="highlight json"><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1cb0221e-c401-4721-977e-21748d4447bb"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General project"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
-<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-
-<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>Unique UUID for the Project</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>The name of the Project</td>
+</tr>
+</tbody></table>
 
           <h1 id='authentication'>Authentication</h1><pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">tagplay</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">);</span>
 
 <span class="nx">client</span> <span class="o">=</span> <span class="nx">tagplay</span><span class="p">.</span><span class="nx">createClient</span><span class="p">(</span><span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG'</span><span class="p">);</span>
-</code></pre>
-<pre><code class="highlight elixir"><span class="n">client</span> <span class="o">=</span> <span class="no">Tagplay</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="sd">"</span><span class="s2">ABCDEFG:ABCDEFG:ABCDEFG"</span><span class="p">)</span>
-<span class="no">Tagplay</span><span class="o">.</span><span class="no">Project</span><span class="o">.</span><span class="n">list</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
 </code></pre>
 <pre><code class="highlight shell">
 curl -X GET <span class="s2">"http://api.tagplay.co/v1/project"</span> <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer ABCDEFG:ABCDEFG:ABCDEFG"</span>
 </code></pre>
 
-<blockquote>
-<p>Make sure to replace <code class="prettyprint">ABCDEFG:ABCDEFG:ABCDEFG</code> with your JSON Web Token.</p>
-</blockquote>
-
-<p>Tagplay uses <a href="http://jwt.io">JSON Web Tokens</a> for authorization.</p>
+<p>Tagplay uses <a href="http://jwt.io">JSON Web Tokens</a> for authorization.
+You generate these from the <a href="https://beta.tagplay.co/dashboard">Dashboard</a></p>
 
 <aside class="notice">
-You must replace `ABCDEFG:ABCDEFG:ABCDEFG` with your personal JWT key.
+Please note that tokens have scope.
+They can be generate for a whole project or just a specific feed.
 </aside>
 
-          <h1 id='projects'>Projects</h1><h2 id='get-project-list'>Get Project List</h2><pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">tagplay</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">);</span>
-
-<span class="nx">client</span> <span class="o">=</span> <span class="nx">tagplay</span><span class="p">.</span><span class="nx">createClient</span><span class="p">(</span><span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG'</span><span class="p">);</span>
-</code></pre>
-<pre><code class="highlight shell">curl <span class="s2">"http://api.tagplay.co/v1/project"</span>
--H <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span>
-</code></pre>
-
-<p>Gets you a list of all Projects you have access to.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code class="prettyprint">GET http://api.tagplay.co/v1/project</code></p>
-<h3 id='http-result'>HTTP Result</h3>
-<p>Data will be an array of <a href="#project">Project</a> items.</p>
-<h2 id='get-project-info'>Get Project Info</h2><pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">tagplay</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">);</span>
+          <h1 id='projects'>Projects</h1><h2 id='get-project-info'>Get Project Info</h2><pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">tagplay</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">);</span>
 
 <span class="nx">client</span> <span class="o">=</span> <span class="nx">tagplay</span><span class="p">.</span><span class="nx">createClient</span><span class="p">(</span><span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG'</span><span class="p">);</span>
 </code></pre>
 <pre><code class="highlight shell">curl <span class="s2">"http://api.tagplay.co/v1/project/PROJECT_ID"</span>
 -H <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span>
 </code></pre>
-
-<p>Gets you a project info</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">GET http://api.tagplay.co/v1/project/:project_id</code></p>
 <h3 id='http-result'>HTTP Result</h3>
-<p>Data will be an array of <a href="#project">Project</a> items.</p>
+<p>Data will be a <a href="#project">Project</a> object.</p>
 
           <h1 id='feed'>Feed</h1><h2 id='list-feeds-in-project'>List Feeds in Project</h2><pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">tagplay</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">);</span>
 
@@ -222,8 +390,32 @@ You must replace `ABCDEFG:ABCDEFG:ABCDEFG` with your personal JWT key.
 <pre><code class="highlight shell">curl <span class="s2">"http://api.tagplay.co/v1/project/PROJECT_ID/feed"</span>
 -H <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span>
 </code></pre>
-<h3 id='http-request'>HTTP Request</h3>
+<h3 id='http-request'>HTTP Request:</h3>
 <p><code class="prettyprint">GET http://api.tagplay.co/v1/project/:project_id/feed</code></p>
+<h3 id='query-parameters'>Query Parameters:</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>limit</td>
+<td>20</td>
+<td>Limits the results to specified length.</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>0</td>
+<td>Starts results from the following item.</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+Remember: URI&rsquo;s for limit and offset have already been given to you
+in the `pagination` key in the <a href="#data-objects">Root Object</a>.
+</aside>
 <h3 id='http-result'>HTTP Result</h3>
 <p>Data will be an array of <a href="#feed">Feed</a> items.</p>
 <h2 id='get-feed-info'>Get Feed Info</h2><pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">tagplay</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">);</span>
@@ -247,6 +439,30 @@ You must replace `ABCDEFG:ABCDEFG:ABCDEFG` with your personal JWT key.
 </code></pre>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">GET http://api.tagplay.co/v1/project/:project_id/feed/:feed_id/post</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>limit</td>
+<td>20</td>
+<td>Limits the results to specified length.</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>0</td>
+<td>Starts results from the following item.</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+Remember: URI&rsquo;s for limit and offset have already been given to you
+in the `pagination` key in the <a href="#data-objects">Root Object</a>.
+</aside>
 <h3 id='http-result'>HTTP Result</h3>
 <p>Data will be a list of <a href="#post">Post</a> objects.</p>
 <h2 id='get-post-info'>Get Post Info</h2><pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">tagplay</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">);</span>
@@ -260,63 +476,6 @@ You must replace `ABCDEFG:ABCDEFG:ABCDEFG` with your personal JWT key.
 <p><code class="prettyprint">GET http://api.tagplay.co/v1/project/:project_id/feed/:feed_id/post/:post_id</code></p>
 <h3 id='http-result'>HTTP Result</h3>
 <p>Data will be a <a href="#post">Post</a> object.</p>
-
-          <h1 id='errors'>Errors</h1>
-<aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files&hellip;just save them to the `includes` folder and add them to the top of your `index.md`&rsquo;s frontmatter. Files are included in the order listed.</aside>
-
-<p>The Kittn API uses the following error codes:</p>
-
-<table><thead>
-<tr>
-<th>Error Code</th>
-<th>Meaning</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>400</td>
-<td>Bad Request &ndash; Your request sucks</td>
-</tr>
-<tr>
-<td>401</td>
-<td>Unauthorized &ndash; Your API key is wrong</td>
-</tr>
-<tr>
-<td>403</td>
-<td>Forbidden &ndash; The kitten requested is hidden for administrators only</td>
-</tr>
-<tr>
-<td>404</td>
-<td>Not Found &ndash; The specified kitten could not be found</td>
-</tr>
-<tr>
-<td>405</td>
-<td>Method Not Allowed &ndash; You tried to access a kitten with an invalid method</td>
-</tr>
-<tr>
-<td>406</td>
-<td>Not Acceptable &ndash; You requested a format that isn&rsquo;t json</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone &ndash; The kitten requested has been removed from our servers</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&rsquo;m a teapot</td>
-</tr>
-<tr>
-<td>429</td>
-<td>Too Many Requests &ndash; You&rsquo;re requesting too many kittens! Slown down!</td>
-</tr>
-<tr>
-<td>500</td>
-<td>Internal Server Error &ndash; We had a problem with our server. Try again later.</td>
-</tr>
-<tr>
-<td>503</td>
-<td>Service Unavailable &ndash; We&rsquo;re temporarially offline for maintanance. Please try again later.</td>
-</tr>
-</tbody></table>
 
           <h1 id='libraries'>Libraries</h1><h2 id='official-libraries'>Official Libraries</h2>
 <table><thead>
@@ -356,8 +515,8 @@ You must replace `ABCDEFG:ABCDEFG:ABCDEFG` with your personal JWT key.
       </div>
       <div class="dark-box">
           <div class="lang-selector">
-                <a href="#" data-language-name="shell">Shell</a>
-                <a href="#" data-language-name="javascript">NodeJS</a>
+                <a href="#" data-language-name="javascript">nodejs</a>
+                <a href="#" data-language-name="shell">shell</a>
           </div>
       </div>
     </div>
