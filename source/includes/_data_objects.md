@@ -16,7 +16,7 @@
 All API calls reply with a root object.
 Resulting Data from query will be found under the `data` attribute of that object.
 
-If the data is an array a `pagination` object will appear in the root describing pegination details.
+If the data is an array a `pagination` object will appear in the root describing pagination details.
 
 <aside class="warning">Note that previous_url, and next_url will only appear when there are results in those pages.</aside>
 
