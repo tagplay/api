@@ -116,7 +116,7 @@ meta          | Object | Object of meta information
 ```json
 {
 	"id": "a10b01ac-c1e7-495b-acfb-93f1a10dac16",
-	"name": "Graphs",
+	"name": "Me myself and Tagplay",
 	"preview_media": {
 		"id": "046f1ba0-6196-47f2-b40b-b21d81548246",
 		"image": "http://example.com/1f36822e.jpg",
@@ -130,8 +130,8 @@ Parameter    |  Type | Description
 ------------ | ----- | ---------------
 id                  | String  | Unique UUID for the Feed
 name                | String  | The name of the Feed
-public_media_count  | Integer | Number of items in the feed
-preview_media       | Object  | Preview media object
+public_media_count  | Integer | Number of items in the Feed
+preview_media       | Object  | Preview media object, the first public [Post](#post) in the Feed
 *preview_media*.id    | String  | id of the [Post](#post) the media is from
 *preview_media*.image | String  | URI of the media
 *preview_media*.text  | String  | Text from the [Post](#post).
