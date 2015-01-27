@@ -7,7 +7,7 @@ client = tagplay.createClient('ABCDEFG:ABCDEFG:ABCDEFG');
 ```
 ```shell
 
-curl -X GET "http://api.tagplay.co/v1/project" \
+curl -X GET "https://api.tagplay.co/v1/project" \
   -H "Authorization: Bearer ABCDEFG:ABCDEFG:ABCDEFG"
 ```
 
