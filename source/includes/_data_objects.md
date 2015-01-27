@@ -131,7 +131,7 @@ Parameter    |  Type | Description
 id                  | String  | Unique UUID for the Feed
 name                | String  | The name of the Feed
 public_media_count  | Integer | Number of items in the Feed
-preview_media       | Object  | Preview media object, the first public [Post](#post) in the Feed
+preview_media       | Object  | Preview media object, the newest public [Post](#post) in the Feed
 *preview_media*.id    | String  | id of the [Post](#post) the media is from
 *preview_media*.image | String  | URI of the media
 *preview_media*.text  | String  | Text from the [Post](#post).
