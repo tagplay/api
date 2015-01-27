@@ -1,9 +1,5 @@
 # Data Objects
 
-All API calls reply with a root object.
-Resulting Data from query will be found under the `data` attrubute.
-
-
 ```
 {
 	"pagination": {
@@ -12,12 +8,20 @@ Resulting Data from query will be found under the `data` attrubute.
 		"total": 505,
 		"previous_url": "/v1/project?offset=0",
 		"next_url": "/v1/project?offset=40"
-		},
+	},
 	"data": Object or Array
 }
 ```
 
-## Image
+All API calls reply with a root object.
+Resulting Data from query will be found under the `data` attribute of that object.
+
+If the data is an array a `pagination` object will appear in the root describing pegination details.
+
+<aside class="warning">Note that previous_url, and next_url will only appear when there are results in those pages.</aside>
+
+
+## Media
 
 ```json
 {
@@ -37,30 +41,43 @@ Resulting Data from query will be found under the `data` attrubute.
 }
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Parameter    | Type  | Description
+------------ | ----- | -------------
+id      | String | Unique UUID for the Media
+sources | Array  | Array of Objects describing different sizes of the Media
+*sources[]*.id     | String  | UUID of the Media
+*sources[]*.height | Integer | Height of the Media
+*sources[]*.width  | Integer | Width of the Media
+*sources[]*.url    | String  | URL to the Media
 
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+## Provider
 
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+```json
+{
+	"added_time": "2014-11-05T15:48:24.560047",
+	"name": "instagram",
+	"username": "example_user"
+}
+```
 
+Parameter    | Type  | Description
+------------ | ----- | ------------
+name       | String | Name of the Provider
+added_time | JSONDate | Time the item was added *to the Provider*
+username   | String | Username of the user who posted to the Provider
 
 ## Post
 
 ```json
 {
-	"provider": {
-		"added_time": "2014-11-05T15:48:24.560047",
-		"name": "instagram",
-		"username": "example_user"
-	},
+	"provider": ProviderObject,
 	"created_time": "2014-11-05T15:48:23",
 	"id": "0020bad0-9e61-11e4-bf88-20c9d08a778d",
 	"text": "Selfie at #tagplay",
 	"normalized_text": "Selfie at tagplay",
 	"stripped_text": "Selfie at",
 	"type": "image",
-	"image": ImageObject,
+	"image": MediaObject,
 	"tags": [ "tagplay" ],
 	"meta": {
 		"pinned": false,
@@ -74,14 +91,25 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
 
 ```
 
-Media describes a simple media image. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua.
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
+Parameter    | Type  | Description
+------------ | ----- | ------------
+id           | String | Unique UUID for the Post
+type          | String | Type of the Post
+created_time | JSONDate | Time the Post was created
+provider     | [Provider](#provider) | Provider info.
+text         | String | The original text
+normalized_text | String | Normalized version of the text
+stripped_text | String | Stripped version of the text
+image         | [Media](#media) | Linked image
+video         | [Media](#media) | Linked video
+tags          | Array | Arrays of tag strings
+meta          | Object | Object of meta information
+*meta*.pinned      | Boolean | Is the Post pinned to the top of the feed
+*meta*.removed     | Boolean | Has the Post been removed
+*meta*.likes       | Integer | Number of likes
+*meta*.flags       | Integer | Number of flags
+*meta*.has_liked   | Boolean | Have you like it?
+*meta*.has_flagged | Boolean | Have you flagged it?
 
 ## Feed
 
@@ -98,12 +126,17 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
 }
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Parameter    |  Type | Description
+------------ | ----- | ---------------
+id                  | String  | Unique UUID for the Feed
+name                | String  | The name of the Feed
+public_media_count  | Integer | Number of items in the feed
+preview_media       | Object  | Preview media object
+*preview_media*.id    | String  | id of the [Post](#post) the media is from
+*preview_media*.image | String  | URI of the media
+*preview_media*.text  | String  | Text from the [Post](#post).
 
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 ## Project
 
@@ -114,9 +147,7 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
 }
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Parameter | Type | Description
+--------- | ---- | -----------
+id        | String | Unique UUID for the Project
+name      | String | The name of the Project
