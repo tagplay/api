@@ -56,3 +56,93 @@ curl "https://api.tagplay.co/v1/project/PROJECT_ID/feed/FEED_ID/post/POST_ID"
 ### HTTP Result
 
 Data will be a [Post](#post) object.
+
+
+
+
+## Flag Post
+
+```javascript
+var tagplay = require('tagplay');
+
+client = tagplay.createClient('ABCDEFG:ABCDEFG:ABCDEFG');
+```
+
+```shell
+curl -X POST "https://api.tagplay.co/v1/project/PROJECT_ID/feed/FEED_ID/post/POST_ID/flag"
+-H "Authorization: Bearer $TOKEN"
+```
+
+### HTTP Request
+
+`POST https://api.tagplay.co/v1/project/:project_id/feed/:feed_id/post/:post_id/flag`
+
+### HTTP Result
+
+Empty Response
+
+## Unflag Post
+
+```javascript
+var tagplay = require('tagplay');
+
+client = tagplay.createClient('ABCDEFG:ABCDEFG:ABCDEFG');
+```
+
+```shell
+curl -X POST "https://api.tagplay.co/v1/project/PROJECT_ID/feed/FEED_ID/post/POST_ID/unflag"
+-H "Authorization: Bearer $TOKEN"
+```
+
+### HTTP Request
+
+`POST https://api.tagplay.co/v1/project/:project_id/feed/:feed_id/post/:post_id/unflag`
+
+### HTTP Result
+
+Empty Response
+
+
+
+
+## Like Post
+
+```javascript
+var tagplay = require('tagplay');
+
+client = tagplay.createClient('ABCDEFG:ABCDEFG:ABCDEFG');
+```
+
+```shell
+curl -X POST "https://api.tagplay.co/v1/project/PROJECT_ID/feed/FEED_ID/post/POST_ID/like"
+-H "Authorization: Bearer $TOKEN"
+```
+
+### HTTP Request
+
+`POST https://api.tagplay.co/v1/project/:project_id/feed/:feed_id/post/:post_id/like`
+
+### HTTP Result
+
+Empty Response
+
+## Unike Post
+
+```javascript
+var tagplay = require('tagplay');
+
+client = tagplay.createClient('ABCDEFG:ABCDEFG:ABCDEFG');
+```
+
+```shell
+curl -X POST "https://api.tagplay.co/v1/project/PROJECT_ID/feed/FEED_ID/post/POST_ID/unlike"
+-H "Authorization: Bearer $TOKEN"
+```
+
+### HTTP Request
+
+`POST https://api.tagplay.co/v1/project/:project_id/feed/:feed_id/post/:post_id/unlike`
+
+### HTTP Result
+
+Empty Response
