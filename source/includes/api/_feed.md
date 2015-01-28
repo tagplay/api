@@ -13,10 +13,13 @@ client.listFeed('project_id', function(error, body) {
 	console.log(body); // json object
 });
 ```
-
 ```shell
 curl "https://api.tagplay.co/v1/project/PROJECT_ID/feed"
 -H "Authorization: Bearer $TOKEN"
+```
+```elixir
+client = Tagplay.client("ABCDEFG:ABCDEFG:ABCDEFG")
+Tagplay.Feed.list!('project_id', client)
 ```
 
 ### HTTP Request:
@@ -46,6 +49,10 @@ Data will be an array of [Feed](#feed) items.
 ```shell
 curl "https://api.tagplay.co/v1/project/PROJECT_ID/feed/FEED_ID"
 -H "Authorization: Bearer $TOKEN"
+```
+```elixir
+client = Tagplay.client("ABCDEFG:ABCDEFG:ABCDEFG")
+Tagplay.Feed.get!('project_id', 'feed_id', client)
 ```
 
 ### HTTP Request

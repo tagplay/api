@@ -2,8 +2,9 @@
 title: Tagplay API Reference
 
 language_tabs:
-  - javascript: nodejs
   - shell
+  - javascript: nodejs
+  - elixir
 
 toc_footers:
   - <a href='https://tagplay.co/dashboard'>Tagplay Dashboard</a>
