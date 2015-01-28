@@ -4,9 +4,11 @@
 ## Get Project Info
 
 ```javascript
-var tagplay = require('tagplay');
+var client = require('tagplay')({token: 'ABCDEFG:ABCDEFG:ABCDEFG'});
 
-client = tagplay.createClient('ABCDEFG:ABCDEFG:ABCDEFG');
+client.getProject('project_id', function(error, body) {
+	console.log(body); // json object
+});
 ```
 
 ```shell

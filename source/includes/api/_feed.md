@@ -5,9 +5,11 @@
 
 
 ```javascript
-var tagplay = require('tagplay');
+var client = require('tagplay')({token: 'ABCDEFG:ABCDEFG:ABCDEFG'});
 
-client = tagplay.createClient('ABCDEFG:ABCDEFG:ABCDEFG');
+client.listFeed('project_id', function(error, body) {
+	console.log(body); // json object
+});
 ```
 
 ```shell
@@ -36,12 +38,6 @@ in the `pagination` key in the <a href="#data-objects">Root Object</a>.
 Data will be an array of [Feed](#feed) items.
 
 ## Get Feed Info
-
-```javascript
-var tagplay = require('tagplay');
-
-client = tagplay.createClient('ABCDEFG:ABCDEFG:ABCDEFG');
-```
 
 ```shell
 curl "https://api.tagplay.co/v1/project/PROJECT_ID/feed/FEED_ID"
