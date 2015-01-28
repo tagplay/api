@@ -71,7 +71,7 @@ where on your website.</p>
 <p>All API calls reply with a root object.
 Resulting Data from query will be found under the <code class="prettyprint">data</code> attribute of that object.</p>
 
-<p>If the data is an array a <code class="prettyprint">pagination</code> object will appear in the root describing pegination details.</p>
+<p>If the data is an array a <code class="prettyprint">pagination</code> object will appear in the root describing pagination details.</p>
 
 <aside class="warning">Note that previous_url, and next_url will only appear when there are results in those pages.</aside>
 <h2 id='media'>Media</h2><pre><code class="highlight json"><span class="p">{</span><span class="w">
@@ -276,7 +276,7 @@ Resulting Data from query will be found under the <code class="prettyprint">data
 </tbody></table>
 <h2 id='feed'>Feed</h2><pre><code class="highlight json"><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a10b01ac-c1e7-495b-acfb-93f1a10dac16"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Graphs"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Me myself and Tagplay"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"preview_media"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"046f1ba0-6196-47f2-b40b-b21d81548246"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/1f36822e.jpg"</span><span class="p">,</span><span class="w">
@@ -306,12 +306,12 @@ Resulting Data from query will be found under the <code class="prettyprint">data
 <tr>
 <td>public_media_count</td>
 <td>Integer</td>
-<td>Number of items in the feed</td>
+<td>Number of items in the Feed</td>
 </tr>
 <tr>
 <td>preview_media</td>
 <td>Object</td>
-<td>Preview media object</td>
+<td>Preview media object, the newest public <a href="#post">Post</a> in the Feed</td>
 </tr>
 <tr>
 <td><em>preview_media</em>.id</td>
@@ -354,12 +354,17 @@ Resulting Data from query will be found under the <code class="prettyprint">data
 </tr>
 </tbody></table>
 
-          <h1 id='authentication'>Authentication</h1><pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">tagplay</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">);</span>
+          <h1 id='authentication'>Authentication</h1><pre><code class="highlight javascript">
+<span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span>
+  <span class="na">token</span><span class="p">:</span> <span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG'</span>
+<span class="p">});</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">getProject</span><span class="p">(</span><span class="s1">'project_id'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span> <span class="c1">// json object</span>
+<span class="p">});</span>
 
-<span class="nx">client</span> <span class="o">=</span> <span class="nx">tagplay</span><span class="p">.</span><span class="nx">createClient</span><span class="p">(</span><span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG'</span><span class="p">);</span>
 </code></pre>
 <pre><code class="highlight shell">
-curl -X GET <span class="s2">"http://api.tagplay.co/v1/project"</span> <span class="se">\</span>
+curl -X GET <span class="s2">"https://api.tagplay.co/v1/project"</span> <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer ABCDEFG:ABCDEFG:ABCDEFG"</span>
 </code></pre>
 
@@ -371,27 +376,31 @@ Please note that tokens have scope.
 They can be generate for a whole project or just a specific feed.
 </aside>
 
-          <h1 id='projects'>Projects</h1><h2 id='get-project-info'>Get Project Info</h2><pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">tagplay</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">);</span>
+          <h1 id='projects'>Projects</h1><h2 id='get-project-info'>Get Project Info</h2><pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span><span class="na">token</span><span class="p">:</span> <span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG'</span><span class="p">});</span>
 
-<span class="nx">client</span> <span class="o">=</span> <span class="nx">tagplay</span><span class="p">.</span><span class="nx">createClient</span><span class="p">(</span><span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG'</span><span class="p">);</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">getProject</span><span class="p">(</span><span class="s1">'project_id'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span> <span class="c1">// json object</span>
+<span class="p">});</span>
 </code></pre>
-<pre><code class="highlight shell">curl <span class="s2">"http://api.tagplay.co/v1/project/PROJECT_ID"</span>
+<pre><code class="highlight shell">curl <span class="s2">"https://api.tagplay.co/v1/project/PROJECT_ID"</span>
 -H <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span>
 </code></pre>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code class="prettyprint">GET http://api.tagplay.co/v1/project/:project_id</code></p>
+<p><code class="prettyprint">GET https://api.tagplay.co/v1/project/:project_id</code></p>
 <h3 id='http-result'>HTTP Result</h3>
 <p>Data will be a <a href="#project">Project</a> object.</p>
 
-          <h1 id='feed'>Feed</h1><h2 id='list-feeds-in-project'>List Feeds in Project</h2><pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">tagplay</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">);</span>
+          <h1 id='feed'>Feed</h1><h2 id='list-feeds-in-project'>List Feeds in Project</h2><pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span><span class="na">token</span><span class="p">:</span> <span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG'</span><span class="p">});</span>
 
-<span class="nx">client</span> <span class="o">=</span> <span class="nx">tagplay</span><span class="p">.</span><span class="nx">createClient</span><span class="p">(</span><span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG'</span><span class="p">);</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">listFeed</span><span class="p">(</span><span class="s1">'project_id'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span> <span class="c1">// json object</span>
+<span class="p">});</span>
 </code></pre>
-<pre><code class="highlight shell">curl <span class="s2">"http://api.tagplay.co/v1/project/PROJECT_ID/feed"</span>
+<pre><code class="highlight shell">curl <span class="s2">"https://api.tagplay.co/v1/project/PROJECT_ID/feed"</span>
 -H <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span>
 </code></pre>
 <h3 id='http-request'>HTTP Request:</h3>
-<p><code class="prettyprint">GET http://api.tagplay.co/v1/project/:project_id/feed</code></p>
+<p><code class="prettyprint">GET https://api.tagplay.co/v1/project/:project_id/feed</code></p>
 <h3 id='query-parameters'>Query Parameters:</h3>
 <table><thead>
 <tr>
@@ -418,27 +427,25 @@ in the `pagination` key in the <a href="#data-objects">Root Object</a>.
 </aside>
 <h3 id='http-result'>HTTP Result</h3>
 <p>Data will be an array of <a href="#feed">Feed</a> items.</p>
-<h2 id='get-feed-info'>Get Feed Info</h2><pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">tagplay</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">);</span>
-
-<span class="nx">client</span> <span class="o">=</span> <span class="nx">tagplay</span><span class="p">.</span><span class="nx">createClient</span><span class="p">(</span><span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG'</span><span class="p">);</span>
-</code></pre>
-<pre><code class="highlight shell">curl <span class="s2">"http://api.tagplay.co/v1/project/PROJECT_ID/feed/FEED_ID"</span>
+<h2 id='get-feed-info'>Get Feed Info</h2><pre><code class="highlight shell">curl <span class="s2">"https://api.tagplay.co/v1/project/PROJECT_ID/feed/FEED_ID"</span>
 -H <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span>
 </code></pre>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code class="prettyprint">GET http://api.tagplay.co/v1/project/:project_id/feed/:feed_id</code></p>
+<p><code class="prettyprint">GET https://api.tagplay.co/v1/project/:project_id/feed/:feed_id</code></p>
 <h3 id='http-result'>HTTP Result</h3>
 <p>Data will be a<a href="#feed">Feed</a> object.</p>
 
-          <h1 id='post'>Post</h1><h2 id='list-posts-in-feed'>List Posts in Feed</h2><pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">tagplay</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">);</span>
+          <h1 id='post'>Post</h1><h2 id='list-posts-in-feed'>List Posts in Feed</h2><pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span><span class="na">token</span><span class="p">:</span> <span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG'</span><span class="p">});</span>
 
-<span class="nx">client</span> <span class="o">=</span> <span class="nx">tagplay</span><span class="p">.</span><span class="nx">createClient</span><span class="p">(</span><span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG'</span><span class="p">);</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">listPost</span><span class="p">(</span><span class="s1">'project_id'</span><span class="p">,</span> <span class="s1">'feed_id'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span> <span class="c1">// json object</span>
+<span class="p">});</span>
 </code></pre>
-<pre><code class="highlight shell">curl <span class="s2">"http://api.tagplay.co/v1/project/PROJECT_ID/feed/FEED_ID/post"</span>
+<pre><code class="highlight shell">curl <span class="s2">"https://api.tagplay.co/v1/project/PROJECT_ID/feed/FEED_ID/post"</span>
 -H <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span>
 </code></pre>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code class="prettyprint">GET http://api.tagplay.co/v1/project/:project_id/feed/:feed_id/post</code></p>
+<p><code class="prettyprint">GET https://api.tagplay.co/v1/project/:project_id/feed/:feed_id/post</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -465,17 +472,71 @@ in the `pagination` key in the <a href="#data-objects">Root Object</a>.
 </aside>
 <h3 id='http-result'>HTTP Result</h3>
 <p>Data will be a list of <a href="#post">Post</a> objects.</p>
-<h2 id='get-post-info'>Get Post Info</h2><pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">tagplay</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">);</span>
+<h2 id='get-post'>Get Post</h2><pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span><span class="na">token</span><span class="p">:</span> <span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG'</span><span class="p">});</span>
 
-<span class="nx">client</span> <span class="o">=</span> <span class="nx">tagplay</span><span class="p">.</span><span class="nx">createClient</span><span class="p">(</span><span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG'</span><span class="p">);</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">getPost</span><span class="p">(</span><span class="s1">'project_id'</span><span class="p">,</span> <span class="s1">'feed_id'</span><span class="p">,</span> <span class="s1">'post_id'</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span> <span class="c1">// json object</span>
+<span class="p">});</span>
 </code></pre>
-<pre><code class="highlight shell">curl <span class="s2">"http://api.tagplay.co/v1/project/PROJECT_ID/feed/FEED_ID/post/POST_ID"</span>
+<pre><code class="highlight shell">curl <span class="s2">"https://api.tagplay.co/v1/project/PROJECT_ID/feed/FEED_ID/post/POST_ID"</span>
 -H <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span>
 </code></pre>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code class="prettyprint">GET http://api.tagplay.co/v1/project/:project_id/feed/:feed_id/post/:post_id</code></p>
+<p><code class="prettyprint">GET https://api.tagplay.co/v1/project/:project_id/feed/:feed_id/post/:post_id</code></p>
 <h3 id='http-result'>HTTP Result</h3>
 <p>Data will be a <a href="#post">Post</a> object.</p>
+<h2 id='flag-post'>Flag Post</h2><pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span><span class="na">token</span><span class="p">:</span> <span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG'</span><span class="p">});</span>
+
+<span class="nx">client</span><span class="p">.</span><span class="nx">flagPost</span><span class="p">(</span><span class="s1">'project_id'</span><span class="p">,</span> <span class="s1">'feed_id'</span><span class="p">,</span> <span class="s1">'post_id'</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span> <span class="c1">// json object</span>
+<span class="p">});</span>
+</code></pre>
+<pre><code class="highlight shell">curl -X POST <span class="s2">"https://api.tagplay.co/v1/project/PROJECT_ID/feed/FEED_ID/post/POST_ID/flag"</span>
+-H <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span>
+</code></pre>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">POST https://api.tagplay.co/v1/project/:project_id/feed/:feed_id/post/:post_id/flag</code></p>
+<h3 id='http-result'>HTTP Result</h3>
+<p>Empty Response</p>
+<h2 id='unflag-post'>Unflag Post</h2><pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span><span class="na">token</span><span class="p">:</span> <span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG'</span><span class="p">});</span>
+
+<span class="nx">client</span><span class="p">.</span><span class="nx">unflagPost</span><span class="p">(</span><span class="s1">'project_id'</span><span class="p">,</span> <span class="s1">'feed_id'</span><span class="p">,</span> <span class="s1">'post_id'</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span> <span class="c1">// json object</span>
+<span class="p">});</span>
+</code></pre>
+<pre><code class="highlight shell">curl -X POST <span class="s2">"https://api.tagplay.co/v1/project/PROJECT_ID/feed/FEED_ID/post/POST_ID/unflag"</span>
+-H <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span>
+</code></pre>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">POST https://api.tagplay.co/v1/project/:project_id/feed/:feed_id/post/:post_id/unflag</code></p>
+<h3 id='http-result'>HTTP Result</h3>
+<p>Empty Response</p>
+<h2 id='like-post'>Like Post</h2><pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span><span class="na">token</span><span class="p">:</span> <span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG'</span><span class="p">});</span>
+
+<span class="nx">client</span><span class="p">.</span><span class="nx">likePost</span><span class="p">(</span><span class="s1">'project_id'</span><span class="p">,</span> <span class="s1">'feed_id'</span><span class="p">,</span> <span class="s1">'post_id'</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span> <span class="c1">// json object</span>
+<span class="p">});</span>
+</code></pre>
+<pre><code class="highlight shell">curl -X POST <span class="s2">"https://api.tagplay.co/v1/project/PROJECT_ID/feed/FEED_ID/post/POST_ID/like"</span>
+-H <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span>
+</code></pre>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">POST https://api.tagplay.co/v1/project/:project_id/feed/:feed_id/post/:post_id/like</code></p>
+<h3 id='http-result'>HTTP Result</h3>
+<p>Empty Response</p>
+<h2 id='unike-post'>Unike Post</h2><pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span><span class="na">token</span><span class="p">:</span> <span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG'</span><span class="p">});</span>
+
+<span class="nx">client</span><span class="p">.</span><span class="nx">unlikePost</span><span class="p">(</span><span class="s1">'project_id'</span><span class="p">,</span> <span class="s1">'feed_id'</span><span class="p">,</span> <span class="s1">'post_id'</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span> <span class="c1">// json object</span>
+<span class="p">});</span>
+</code></pre>
+<pre><code class="highlight shell">curl -X POST <span class="s2">"https://api.tagplay.co/v1/project/PROJECT_ID/feed/FEED_ID/post/POST_ID/unlike"</span>
+-H <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span>
+</code></pre>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">POST https://api.tagplay.co/v1/project/:project_id/feed/:feed_id/post/:post_id/unlike</code></p>
+<h3 id='http-result'>HTTP Result</h3>
+<p>Empty Response</p>
 
           <h1 id='libraries'>Libraries</h1><h2 id='official-libraries'>Official Libraries</h2>
 <table><thead>
@@ -487,27 +548,9 @@ in the `pagination` key in the <a href="#data-objects">Root Object</a>.
 </tr>
 </thead><tbody>
 <tr>
-<td>NodeJS/Javascript</td>
-<td><a href="https://github.com/Tagplay/node-tagplay-api">GitHub</a></td>
-<td><a href="https://github.com/Tagplay/ruby-tagplay-api">NPM</a></td>
-<td><a href="https://github.com/Tagplay/ruby-tagplay-api">NodeDocs</a></td>
-</tr>
-<tr>
-<td>Ruby</td>
-<td><a href="https://github.com/Tagplay/ruby-tagplay-api">GitHub</a></td>
-<td><a href="https://rubygems.org/gems/tagplay-api">RubyGem</a></td>
-<td></td>
-</tr>
-<tr>
-<td>Elixir</td>
-<td><a href="https://github.com/Tagplay/ruby-tagplay-api">GitHub</a></td>
-<td><a href="https://hex.pm/packages/tagplay-api">Hex</a></td>
-<td><a href="https://hexdocs.pm/tagplay-api">HexDocs</a></td>
-</tr>
-<tr>
-<td>Erlang</td>
-<td><a href="https://github.com/Tagplay/erlang-tagplay-api">GitHub</a></td>
-<td></td>
+<td>Javascript/NodeJS</td>
+<td><a href="https://github.com/tagplay/tagplay">GitHub</a></td>
+<td><a href="https://www.npmjs.com/package/tagplay">NPM</a></td>
 <td></td>
 </tr>
 </tbody></table>
