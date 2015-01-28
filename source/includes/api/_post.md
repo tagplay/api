@@ -4,9 +4,11 @@
 ## List Posts in Feed
 
 ```javascript
-var tagplay = require('tagplay');
+var client = require('tagplay')({token: 'ABCDEFG:ABCDEFG:ABCDEFG'});
 
-client = tagplay.createClient('ABCDEFG:ABCDEFG:ABCDEFG');
+client.listPost('project_id', 'feed_id', function(error, body) {
+	console.log(body); // json object
+});
 ```
 
 ```shell
@@ -36,12 +38,14 @@ Data will be a list of [Post](#post) objects.
 
 
 
-## Get Post Info
+## Get Post
 
 ```javascript
-var tagplay = require('tagplay');
+var client = require('tagplay')({token: 'ABCDEFG:ABCDEFG:ABCDEFG'});
 
-client = tagplay.createClient('ABCDEFG:ABCDEFG:ABCDEFG');
+client.getPost('project_id', 'feed_id', 'post_id' function(error, body) {
+	console.log(body); // json object
+});
 ```
 
 ```shell
@@ -59,13 +63,14 @@ Data will be a [Post](#post) object.
 
 
 
-
 ## Flag Post
 
 ```javascript
-var tagplay = require('tagplay');
+var client = require('tagplay')({token: 'ABCDEFG:ABCDEFG:ABCDEFG'});
 
-client = tagplay.createClient('ABCDEFG:ABCDEFG:ABCDEFG');
+client.flagPost('project_id', 'feed_id', 'post_id' function(error, body) {
+	console.log(body); // json object
+});
 ```
 
 ```shell
@@ -84,9 +89,11 @@ Empty Response
 ## Unflag Post
 
 ```javascript
-var tagplay = require('tagplay');
+var client = require('tagplay')({token: 'ABCDEFG:ABCDEFG:ABCDEFG'});
 
-client = tagplay.createClient('ABCDEFG:ABCDEFG:ABCDEFG');
+client.unflagPost('project_id', 'feed_id', 'post_id' function(error, body) {
+	console.log(body); // json object
+});
 ```
 
 ```shell
@@ -103,14 +110,14 @@ curl -X POST "https://api.tagplay.co/v1/project/PROJECT_ID/feed/FEED_ID/post/POS
 Empty Response
 
 
-
-
 ## Like Post
 
 ```javascript
-var tagplay = require('tagplay');
+var client = require('tagplay')({token: 'ABCDEFG:ABCDEFG:ABCDEFG'});
 
-client = tagplay.createClient('ABCDEFG:ABCDEFG:ABCDEFG');
+client.likePost('project_id', 'feed_id', 'post_id' function(error, body) {
+	console.log(body); // json object
+});
 ```
 
 ```shell
@@ -129,9 +136,11 @@ Empty Response
 ## Unike Post
 
 ```javascript
-var tagplay = require('tagplay');
+var client = require('tagplay')({token: 'ABCDEFG:ABCDEFG:ABCDEFG'});
 
-client = tagplay.createClient('ABCDEFG:ABCDEFG:ABCDEFG');
+client.unlikePost('project_id', 'feed_id', 'post_id' function(error, body) {
+	console.log(body); // json object
+});
 ```
 
 ```shell
