@@ -1,5 +1,21 @@
 # Projects
 
+## List Projects
+
+```shell
+curl "https://api.tagplay.co/v1/project"
+-H "Authorization: Bearer $TOKEN"
+```
+
+### HTTP Request
+
+`GET https://api.tagplay.co/v1/project`
+
+### HTTP Result
+
+Data will be a list of [Project](#project) objects.
+
+
 
 ## Get Project Info
 
