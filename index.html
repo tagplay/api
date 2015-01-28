@@ -375,8 +375,9 @@ Resulting Data from query will be found under the <code class="prettyprint">data
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span> <span class="c1">// json object</span>
 <span class="p">});</span>
 </code></pre>
-<pre><code class="highlight shell">curl -X GET <span class="s2">"https://api.tagplay.co/v1/project"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Bearer ABCDEFG:ABCDEFG:ABCDEFG"</span>
+<pre><code class="highlight shell"><span class="nb">export </span><span class="nv">TOKEN</span><span class="o">=</span><span class="s2">"ABCDEFG:ABCDEFG:ABCDEFG"</span>
+curl -X GET <span class="s2">"https://api.tagplay.co/v1/project"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span>
 </code></pre>
 <pre><code class="highlight elixir"><span class="n">client</span> <span class="o">=</span> <span class="no">Tagplay</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="sd">"</span><span class="s2">ABCDEFG:ABCDEFG:ABCDEFG"</span><span class="p">)</span>
 <span class="no">Tagplay</span><span class="o">.</span><span class="no">Project</span><span class="o">.</span><span class="n">list!</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
