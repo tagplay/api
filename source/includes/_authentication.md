@@ -9,8 +9,9 @@ client.getProject('project_id', function(error, body) {
 });
 ```
 ```shell
+export TOKEN="ABCDEFG:ABCDEFG:ABCDEFG"
 curl -X GET "https://api.tagplay.co/v1/project" \
-  -H "Authorization: Bearer ABCDEFG:ABCDEFG:ABCDEFG"
+  -H "Authorization: Bearer $TOKEN"
 ```
 ```elixir
 client = Tagplay.client("ABCDEFG:ABCDEFG:ABCDEFG")
