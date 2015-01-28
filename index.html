@@ -376,7 +376,16 @@ Please note that tokens have scope.
 They can be generate for a whole project or just a specific feed.
 </aside>
 
-          <h1 id='projects'>Projects</h1><h2 id='get-project-info'>Get Project Info</h2><pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span><span class="na">token</span><span class="p">:</span> <span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG'</span><span class="p">});</span>
+          <h1 id='projects'>Projects</h1><h2 id='list-projects'>List Projects</h2><pre><code class="highlight shell">curl <span class="s2">"https://api.tagplay.co/v1/project"</span>
+-H <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span>
+</code></pre>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">GET https://api.tagplay.co/v1/project</code></p>
+<h3 id='http-result'>HTTP Result</h3>
+<p>Data will be a list of <a href="#project">Project</a> objects.</p>
+<h2 id='get-project-info'>Get Project Info</h2><pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span>
+    <span class="na">token</span><span class="p">:</span> <span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG'</span>
+<span class="p">});</span>
 
 <span class="nx">client</span><span class="p">.</span><span class="nx">getProject</span><span class="p">(</span><span class="s1">'project_id'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span> <span class="c1">// json object</span>
@@ -390,7 +399,9 @@ They can be generate for a whole project or just a specific feed.
 <h3 id='http-result'>HTTP Result</h3>
 <p>Data will be a <a href="#project">Project</a> object.</p>
 
-          <h1 id='feed'>Feed</h1><h2 id='list-feeds-in-project'>List Feeds in Project</h2><pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span><span class="na">token</span><span class="p">:</span> <span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG'</span><span class="p">});</span>
+          <h1 id='feed'>Feed</h1><h2 id='list-feeds-in-project'>List Feeds in Project</h2><pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span>
+    <span class="na">token</span><span class="p">:</span> <span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG'</span>
+<span class="p">});</span>
 
 <span class="nx">client</span><span class="p">.</span><span class="nx">listFeed</span><span class="p">(</span><span class="s1">'project_id'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span> <span class="c1">// json object</span>
@@ -435,7 +446,9 @@ in the `pagination` key in the <a href="#data-objects">Root Object</a>.
 <h3 id='http-result'>HTTP Result</h3>
 <p>Data will be a<a href="#feed">Feed</a> object.</p>
 
-          <h1 id='post'>Post</h1><h2 id='list-posts-in-feed'>List Posts in Feed</h2><pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span><span class="na">token</span><span class="p">:</span> <span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG'</span><span class="p">});</span>
+          <h1 id='post'>Post</h1><h2 id='list-posts-in-feed'>List Posts in Feed</h2><pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span>
+    <span class="na">token</span><span class="p">:</span> <span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG'</span>
+<span class="p">});</span>
 
 <span class="nx">client</span><span class="p">.</span><span class="nx">listPost</span><span class="p">(</span><span class="s1">'project_id'</span><span class="p">,</span> <span class="s1">'feed_id'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span> <span class="c1">// json object</span>
@@ -472,7 +485,9 @@ in the `pagination` key in the <a href="#data-objects">Root Object</a>.
 </aside>
 <h3 id='http-result'>HTTP Result</h3>
 <p>Data will be a list of <a href="#post">Post</a> objects.</p>
-<h2 id='get-post'>Get Post</h2><pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span><span class="na">token</span><span class="p">:</span> <span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG'</span><span class="p">});</span>
+<h2 id='get-post'>Get Post</h2><pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span>
+    <span class="na">token</span><span class="p">:</span> <span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG'</span>
+<span class="p">});</span>
 
 <span class="nx">client</span><span class="p">.</span><span class="nx">getPost</span><span class="p">(</span><span class="s1">'project_id'</span><span class="p">,</span> <span class="s1">'feed_id'</span><span class="p">,</span> <span class="s1">'post_id'</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span> <span class="c1">// json object</span>
@@ -485,7 +500,9 @@ in the `pagination` key in the <a href="#data-objects">Root Object</a>.
 <p><code class="prettyprint">GET https://api.tagplay.co/v1/project/:project_id/feed/:feed_id/post/:post_id</code></p>
 <h3 id='http-result'>HTTP Result</h3>
 <p>Data will be a <a href="#post">Post</a> object.</p>
-<h2 id='flag-post'>Flag Post</h2><pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span><span class="na">token</span><span class="p">:</span> <span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG'</span><span class="p">});</span>
+<h2 id='flag-post'>Flag Post</h2><pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span>
+    <span class="na">token</span><span class="p">:</span> <span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG'</span>
+<span class="p">});</span>
 
 <span class="nx">client</span><span class="p">.</span><span class="nx">flagPost</span><span class="p">(</span><span class="s1">'project_id'</span><span class="p">,</span> <span class="s1">'feed_id'</span><span class="p">,</span> <span class="s1">'post_id'</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span> <span class="c1">// json object</span>
@@ -498,7 +515,9 @@ in the `pagination` key in the <a href="#data-objects">Root Object</a>.
 <p><code class="prettyprint">POST https://api.tagplay.co/v1/project/:project_id/feed/:feed_id/post/:post_id/flag</code></p>
 <h3 id='http-result'>HTTP Result</h3>
 <p>Empty Response</p>
-<h2 id='unflag-post'>Unflag Post</h2><pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span><span class="na">token</span><span class="p">:</span> <span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG'</span><span class="p">});</span>
+<h2 id='unflag-post'>Unflag Post</h2><pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span>
+    <span class="na">token</span><span class="p">:</span> <span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG'</span>
+<span class="p">});</span>
 
 <span class="nx">client</span><span class="p">.</span><span class="nx">unflagPost</span><span class="p">(</span><span class="s1">'project_id'</span><span class="p">,</span> <span class="s1">'feed_id'</span><span class="p">,</span> <span class="s1">'post_id'</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span> <span class="c1">// json object</span>
@@ -511,7 +530,9 @@ in the `pagination` key in the <a href="#data-objects">Root Object</a>.
 <p><code class="prettyprint">POST https://api.tagplay.co/v1/project/:project_id/feed/:feed_id/post/:post_id/unflag</code></p>
 <h3 id='http-result'>HTTP Result</h3>
 <p>Empty Response</p>
-<h2 id='like-post'>Like Post</h2><pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span><span class="na">token</span><span class="p">:</span> <span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG'</span><span class="p">});</span>
+<h2 id='like-post'>Like Post</h2><pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span>
+    <span class="na">token</span><span class="p">:</span> <span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG
+'</span><span class="p">});</span>
 
 <span class="nx">client</span><span class="p">.</span><span class="nx">likePost</span><span class="p">(</span><span class="s1">'project_id'</span><span class="p">,</span> <span class="s1">'feed_id'</span><span class="p">,</span> <span class="s1">'post_id'</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span> <span class="c1">// json object</span>
@@ -524,7 +545,9 @@ in the `pagination` key in the <a href="#data-objects">Root Object</a>.
 <p><code class="prettyprint">POST https://api.tagplay.co/v1/project/:project_id/feed/:feed_id/post/:post_id/like</code></p>
 <h3 id='http-result'>HTTP Result</h3>
 <p>Empty Response</p>
-<h2 id='unike-post'>Unike Post</h2><pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span><span class="na">token</span><span class="p">:</span> <span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG'</span><span class="p">});</span>
+<h2 id='unike-post'>Unike Post</h2><pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span>
+    <span class="na">token</span><span class="p">:</span> <span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG'</span>
+<span class="p">});</span>
 
 <span class="nx">client</span><span class="p">.</span><span class="nx">unlikePost</span><span class="p">(</span><span class="s1">'project_id'</span><span class="p">,</span> <span class="s1">'feed_id'</span><span class="p">,</span> <span class="s1">'post_id'</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span> <span class="c1">// json object</span>
