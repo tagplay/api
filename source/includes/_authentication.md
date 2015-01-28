@@ -1,19 +1,20 @@
 # Authentication
 
 ```javascript
-
 var client = require('tagplay')({
   token: 'ABCDEFG:ABCDEFG:ABCDEFG'
 });
 client.getProject('project_id', function(error, body) {
   console.log(body); // json object
 });
-
 ```
 ```shell
-
 curl -X GET "https://api.tagplay.co/v1/project" \
   -H "Authorization: Bearer ABCDEFG:ABCDEFG:ABCDEFG"
+```
+```elixir
+client = Tagplay.client("ABCDEFG:ABCDEFG:ABCDEFG")
+Tagplay.Project.list!(client)
 ```
 
 Tagplay uses [JSON Web Tokens](http://jwt.io) for authorization.

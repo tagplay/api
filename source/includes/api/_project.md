@@ -12,10 +12,13 @@ client.getProject('project_id', function(error, body) {
 	console.log(body); // json object
 });
 ```
-
 ```shell
 curl "https://api.tagplay.co/v1/project/PROJECT_ID"
 -H "Authorization: Bearer $TOKEN"
+```
+```elixir
+client = Tagplay.client("ABCDEFG:ABCDEFG:ABCDEFG")
+Tagplay.Project.get!('project_id', client)
 ```
 
 ### HTTP Request
