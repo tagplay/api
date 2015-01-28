@@ -376,14 +376,7 @@ Please note that tokens have scope.
 They can be generate for a whole project or just a specific feed.
 </aside>
 
-          <h1 id='projects'>Projects</h1><h2 id='list-projects'>List Projects</h2><pre><code class="highlight shell">curl <span class="s2">"https://api.tagplay.co/v1/project"</span>
--H <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span>
-</code></pre>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code class="prettyprint">GET https://api.tagplay.co/v1/project</code></p>
-<h3 id='http-result'>HTTP Result</h3>
-<p>Data will be a list of <a href="#project">Project</a> objects.</p>
-<h2 id='get-project-info'>Get Project Info</h2><pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span>
+          <h1 id='projects'>Projects</h1><h2 id='get-project-info'>Get Project Info</h2><pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span>
     <span class="na">token</span><span class="p">:</span> <span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG'</span>
 <span class="p">});</span>
 
