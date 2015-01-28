@@ -45,7 +45,8 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='introduction'>Introduction</h1>
+        <h1 id="introduction">Introduction</h1>
+
 <p>Welcome to the <a href="https://tagplay.co">Tagplay</a> API! You can use our API to programmatically access the Tagplay product.</p>
 
 <p>With Tagplay, you can post your content on social media to update your website automatically.</p>
@@ -57,7 +58,8 @@ We redirect your content when it shares to social media.</p>
 <p>You can use a certain <strong>#tag</strong> from one of your social media profiles to control which content goes
 where on your website.</p>
 
-          <h1 id='data-objects'>Data Objects</h1><pre><code class="highlight json"><span class="p">{</span><span class="w">
+          <h1 id="data-objects">Data Objects</h1>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
     </span><span class="s2">"pagination"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
         </span><span class="s2">"offset"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -75,7 +77,9 @@ Resulting Data from query will be found under the <code class="prettyprint">data
 <p>If the data is an array a <code class="prettyprint">pagination</code> object will appear in the root describing pagination details.</p>
 
 <aside class="warning">Note that previous_url, and next_url will only appear when there are results in those pages.</aside>
-<h2 id='media'>Media</h2><pre><code class="highlight json"><span class="p">{</span><span class="w">
+
+<h2 id="media">Media</h2>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10f85f52-9e61-11e4-82fd-20c9d08a778d"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"sources"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
@@ -130,7 +134,9 @@ Resulting Data from query will be found under the <code class="prettyprint">data
 <td>URL to the Media</td>
 </tr>
 </tbody></table>
-<h2 id='provider'>Provider</h2><pre><code class="highlight json"><span class="p">{</span><span class="w">
+
+<h2 id="provider">Provider</h2>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
     </span><span class="s2">"added_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-11-05T15:48:24.560047"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"instagram"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example_user"</span><span class="w">
@@ -160,7 +166,9 @@ Resulting Data from query will be found under the <code class="prettyprint">data
 <td>Username of the user who posted to the Provider</td>
 </tr>
 </tbody></table>
-<h2 id='post'>Post</h2><pre><code class="highlight json"><span class="p">{</span><span class="w">
+
+<h2 id="post">Post</h2>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
     </span><span class="s2">"provider"</span><span class="p">:</span><span class="w"> </span><span class="err">ProviderObject</span><span class="p">,</span><span class="w">
     </span><span class="s2">"created_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-11-05T15:48:23"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0020bad0-9e61-11e4-bf88-20c9d08a778d"</span><span class="p">,</span><span class="w">
@@ -275,7 +283,9 @@ Resulting Data from query will be found under the <code class="prettyprint">data
 <td>Have you flagged it?</td>
 </tr>
 </tbody></table>
-<h2 id='feed'>Feed</h2><pre><code class="highlight json"><span class="p">{</span><span class="w">
+
+<h2 id="feed">Feed</h2>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a10b01ac-c1e7-495b-acfb-93f1a10dac16"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Me myself and Tagplay"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"preview_media"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -330,7 +340,9 @@ Resulting Data from query will be found under the <code class="prettyprint">data
 <td>Text from the <a href="#post">Post</a>.</td>
 </tr>
 </tbody></table>
-<h2 id='project'>Project</h2><pre><code class="highlight json"><span class="p">{</span><span class="w">
+
+<h2 id="project">Project</h2>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1cb0221e-c401-4721-977e-21748d4447bb"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General project"</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -355,7 +367,8 @@ Resulting Data from query will be found under the <code class="prettyprint">data
 </tr>
 </tbody></table>
 
-          <h1 id='authentication'>Authentication</h1><pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span>
+          <h1 id="authentication">Authentication</h1>
+<pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span>
   <span class="na">token</span><span class="p">:</span> <span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG'</span>
 <span class="p">});</span>
 <span class="nx">client</span><span class="p">.</span><span class="nx">getProject</span><span class="p">(</span><span class="s1">'project_id'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
@@ -377,7 +390,10 @@ Please note that tokens have scope.
 They can be generate for a whole project or just a specific feed.
 </aside>
 
-          <h1 id='projects'>Projects</h1><h2 id='get-project-info'>Get Project Info</h2><pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span>
+          <h1 id="projects">Projects</h1>
+
+<h2 id="get-project-info">Get Project Info</h2>
+<pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span>
     <span class="na">token</span><span class="p">:</span> <span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG'</span>
 <span class="p">});</span>
 
@@ -391,12 +407,19 @@ They can be generate for a whole project or just a specific feed.
 <pre><code class="highlight elixir"><span class="n">client</span> <span class="o">=</span> <span class="no">Tagplay</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="sd">"</span><span class="s2">ABCDEFG:ABCDEFG:ABCDEFG"</span><span class="p">)</span>
 <span class="no">Tagplay</span><span class="o">.</span><span class="no">Project</span><span class="o">.</span><span class="n">get!</span><span class="p">(</span><span class="s1">'project_id'</span><span class="p">,</span> <span class="n">client</span><span class="p">)</span>
 </code></pre>
-<h3 id='http-request'>HTTP Request</h3>
+
+<h3 id="http-request">HTTP Request</h3>
+
 <p><code class="prettyprint">GET https://api.tagplay.co/v1/project/:project_id</code></p>
-<h3 id='http-result'>HTTP Result</h3>
+
+<h3 id="http-result">HTTP Result</h3>
+
 <p>Data will be a <a href="#project">Project</a> object.</p>
 
-          <h1 id='feed'>Feed</h1><h2 id='list-feeds-in-project'>List Feeds in Project</h2><pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span>
+          <h1 id="feed">Feed</h1>
+
+<h2 id="list-feeds-in-project">List Feeds in Project</h2>
+<pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span>
     <span class="na">token</span><span class="p">:</span> <span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG'</span>
 <span class="p">});</span>
 
@@ -410,9 +433,13 @@ They can be generate for a whole project or just a specific feed.
 <pre><code class="highlight elixir"><span class="n">client</span> <span class="o">=</span> <span class="no">Tagplay</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="sd">"</span><span class="s2">ABCDEFG:ABCDEFG:ABCDEFG"</span><span class="p">)</span>
 <span class="no">Tagplay</span><span class="o">.</span><span class="no">Feed</span><span class="o">.</span><span class="n">list!</span><span class="p">(</span><span class="s1">'project_id'</span><span class="p">,</span> <span class="n">client</span><span class="p">)</span>
 </code></pre>
-<h3 id='http-request'>HTTP Request:</h3>
+
+<h3 id="http-request:">HTTP Request:</h3>
+
 <p><code class="prettyprint">GET https://api.tagplay.co/v1/project/:project_id/feed</code></p>
-<h3 id='query-parameters'>Query Parameters:</h3>
+
+<h3 id="query-parameters:">Query Parameters:</h3>
+
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -436,20 +463,31 @@ They can be generate for a whole project or just a specific feed.
 Remember: URI&rsquo;s for limit and offset have already been given to you
 in the `pagination` key in the <a href="#data-objects">Root Object</a>.
 </aside>
-<h3 id='http-result'>HTTP Result</h3>
+
+<h3 id="http-result">HTTP Result</h3>
+
 <p>Data will be an array of <a href="#feed">Feed</a> items.</p>
-<h2 id='get-feed-info'>Get Feed Info</h2><pre><code class="highlight shell">curl <span class="s2">"https://api.tagplay.co/v1/project/PROJECT_ID/feed/FEED_ID"</span>
+
+<h2 id="get-feed-info">Get Feed Info</h2>
+<pre><code class="highlight shell">curl <span class="s2">"https://api.tagplay.co/v1/project/PROJECT_ID/feed/FEED_ID"</span>
 -H <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span>
 </code></pre>
 <pre><code class="highlight elixir"><span class="n">client</span> <span class="o">=</span> <span class="no">Tagplay</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="sd">"</span><span class="s2">ABCDEFG:ABCDEFG:ABCDEFG"</span><span class="p">)</span>
 <span class="no">Tagplay</span><span class="o">.</span><span class="no">Feed</span><span class="o">.</span><span class="n">get!</span><span class="p">(</span><span class="s1">'project_id'</span><span class="p">,</span> <span class="s1">'feed_id'</span><span class="p">,</span> <span class="n">client</span><span class="p">)</span>
 </code></pre>
-<h3 id='http-request'>HTTP Request</h3>
+
+<h3 id="http-request">HTTP Request</h3>
+
 <p><code class="prettyprint">GET https://api.tagplay.co/v1/project/:project_id/feed/:feed_id</code></p>
-<h3 id='http-result'>HTTP Result</h3>
+
+<h3 id="http-result">HTTP Result</h3>
+
 <p>Data will be a<a href="#feed">Feed</a> object.</p>
 
-          <h1 id='post'>Post</h1><h2 id='list-posts-in-feed'>List Posts in Feed</h2><pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span>
+          <h1 id="post">Post</h1>
+
+<h2 id="list-posts-in-feed">List Posts in Feed</h2>
+<pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span>
     <span class="na">token</span><span class="p">:</span> <span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG'</span>
 <span class="p">});</span>
 
@@ -463,9 +501,13 @@ in the `pagination` key in the <a href="#data-objects">Root Object</a>.
 <pre><code class="highlight elixir"><span class="n">client</span> <span class="o">=</span> <span class="no">Tagplay</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="sd">"</span><span class="s2">ABCDEFG:ABCDEFG:ABCDEFG"</span><span class="p">)</span>
 <span class="no">Tagplay</span><span class="o">.</span><span class="no">Post</span><span class="o">.</span><span class="n">list!</span><span class="p">(</span><span class="s1">'project_id'</span><span class="p">,</span> <span class="s1">'feed_id'</span><span class="p">,</span> <span class="n">client</span><span class="p">)</span>
 </code></pre>
-<h3 id='http-request'>HTTP Request</h3>
+
+<h3 id="http-request">HTTP Request</h3>
+
 <p><code class="prettyprint">GET https://api.tagplay.co/v1/project/:project_id/feed/:feed_id/post</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -489,9 +531,13 @@ in the `pagination` key in the <a href="#data-objects">Root Object</a>.
 Remember: URI&rsquo;s for limit and offset have already been given to you
 in the `pagination` key in the <a href="#data-objects">Root Object</a>.
 </aside>
-<h3 id='http-result'>HTTP Result</h3>
+
+<h3 id="http-result">HTTP Result</h3>
+
 <p>Data will be a list of <a href="#post">Post</a> objects.</p>
-<h2 id='get-post'>Get Post</h2><pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span>
+
+<h2 id="get-post">Get Post</h2>
+<pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span>
     <span class="na">token</span><span class="p">:</span> <span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG'</span>
 <span class="p">});</span>
 
@@ -505,11 +551,17 @@ in the `pagination` key in the <a href="#data-objects">Root Object</a>.
 <pre><code class="highlight elixir"><span class="n">client</span> <span class="o">=</span> <span class="no">Tagplay</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="sd">"</span><span class="s2">ABCDEFG:ABCDEFG:ABCDEFG"</span><span class="p">)</span>
 <span class="no">Tagplay</span><span class="o">.</span><span class="no">Post</span><span class="o">.</span><span class="n">get!</span><span class="p">(</span><span class="s1">'project_id'</span><span class="p">,</span> <span class="s1">'feed_id'</span><span class="p">,</span> <span class="s1">'post_id'</span> <span class="n">client</span><span class="p">)</span>
 </code></pre>
-<h3 id='http-request'>HTTP Request</h3>
+
+<h3 id="http-request">HTTP Request</h3>
+
 <p><code class="prettyprint">GET https://api.tagplay.co/v1/project/:project_id/feed/:feed_id/post/:post_id</code></p>
-<h3 id='http-result'>HTTP Result</h3>
+
+<h3 id="http-result">HTTP Result</h3>
+
 <p>Data will be a <a href="#post">Post</a> object.</p>
-<h2 id='flag-post'>Flag Post</h2><pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span>
+
+<h2 id="flag-post">Flag Post</h2>
+<pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span>
     <span class="na">token</span><span class="p">:</span> <span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG'</span>
 <span class="p">});</span>
 
@@ -523,11 +575,17 @@ in the `pagination` key in the <a href="#data-objects">Root Object</a>.
 <pre><code class="highlight elixir"><span class="n">client</span> <span class="o">=</span> <span class="no">Tagplay</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="sd">"</span><span class="s2">ABCDEFG:ABCDEFG:ABCDEFG"</span><span class="p">)</span>
 <span class="no">Tagplay</span><span class="o">.</span><span class="no">Post</span><span class="o">.</span><span class="n">flag!</span><span class="p">(</span><span class="s1">'project_id'</span><span class="p">,</span> <span class="s1">'feed_id'</span><span class="p">,</span> <span class="s1">'post_id'</span> <span class="n">client</span><span class="p">)</span>
 </code></pre>
-<h3 id='http-request'>HTTP Request</h3>
+
+<h3 id="http-request">HTTP Request</h3>
+
 <p><code class="prettyprint">POST https://api.tagplay.co/v1/project/:project_id/feed/:feed_id/post/:post_id/flag</code></p>
-<h3 id='http-result'>HTTP Result</h3>
+
+<h3 id="http-result">HTTP Result</h3>
+
 <p>Empty Response</p>
-<h2 id='unflag-post'>Unflag Post</h2><pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span>
+
+<h2 id="unflag-post">Unflag Post</h2>
+<pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span>
     <span class="na">token</span><span class="p">:</span> <span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG'</span>
 <span class="p">});</span>
 
@@ -541,11 +599,17 @@ in the `pagination` key in the <a href="#data-objects">Root Object</a>.
 <pre><code class="highlight elixir"><span class="n">client</span> <span class="o">=</span> <span class="no">Tagplay</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="sd">"</span><span class="s2">ABCDEFG:ABCDEFG:ABCDEFG"</span><span class="p">)</span>
 <span class="no">Tagplay</span><span class="o">.</span><span class="no">Post</span><span class="o">.</span><span class="n">unflag!</span><span class="p">(</span><span class="s1">'project_id'</span><span class="p">,</span> <span class="s1">'feed_id'</span><span class="p">,</span> <span class="s1">'post_id'</span> <span class="n">client</span><span class="p">)</span>
 </code></pre>
-<h3 id='http-request'>HTTP Request</h3>
+
+<h3 id="http-request">HTTP Request</h3>
+
 <p><code class="prettyprint">POST https://api.tagplay.co/v1/project/:project_id/feed/:feed_id/post/:post_id/unflag</code></p>
-<h3 id='http-result'>HTTP Result</h3>
+
+<h3 id="http-result">HTTP Result</h3>
+
 <p>Empty Response</p>
-<h2 id='like-post'>Like Post</h2><pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span>
+
+<h2 id="like-post">Like Post</h2>
+<pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span>
     <span class="na">token</span><span class="p">:</span> <span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG
 '</span><span class="p">});</span>
 
@@ -559,11 +623,17 @@ in the `pagination` key in the <a href="#data-objects">Root Object</a>.
 <pre><code class="highlight elixir"><span class="n">client</span> <span class="o">=</span> <span class="no">Tagplay</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="sd">"</span><span class="s2">ABCDEFG:ABCDEFG:ABCDEFG"</span><span class="p">)</span>
 <span class="no">Tagplay</span><span class="o">.</span><span class="no">Post</span><span class="o">.</span><span class="n">like!</span><span class="p">(</span><span class="s1">'project_id'</span><span class="p">,</span> <span class="s1">'feed_id'</span><span class="p">,</span> <span class="s1">'post_id'</span> <span class="n">client</span><span class="p">)</span>
 </code></pre>
-<h3 id='http-request'>HTTP Request</h3>
+
+<h3 id="http-request">HTTP Request</h3>
+
 <p><code class="prettyprint">POST https://api.tagplay.co/v1/project/:project_id/feed/:feed_id/post/:post_id/like</code></p>
-<h3 id='http-result'>HTTP Result</h3>
+
+<h3 id="http-result">HTTP Result</h3>
+
 <p>Empty Response</p>
-<h2 id='unike-post'>Unike Post</h2><pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span>
+
+<h2 id="unike-post">Unike Post</h2>
+<pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span>
     <span class="na">token</span><span class="p">:</span> <span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG'</span>
 <span class="p">});</span>
 
@@ -577,12 +647,19 @@ in the `pagination` key in the <a href="#data-objects">Root Object</a>.
 <pre><code class="highlight elixir"><span class="n">client</span> <span class="o">=</span> <span class="no">Tagplay</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="sd">"</span><span class="s2">ABCDEFG:ABCDEFG:ABCDEFG"</span><span class="p">)</span>
 <span class="no">Tagplay</span><span class="o">.</span><span class="no">Post</span><span class="o">.</span><span class="n">unlike!</span><span class="p">(</span><span class="s1">'project_id'</span><span class="p">,</span> <span class="s1">'feed_id'</span><span class="p">,</span> <span class="s1">'post_id'</span> <span class="n">client</span><span class="p">)</span>
 </code></pre>
-<h3 id='http-request'>HTTP Request</h3>
+
+<h3 id="http-request">HTTP Request</h3>
+
 <p><code class="prettyprint">POST https://api.tagplay.co/v1/project/:project_id/feed/:feed_id/post/:post_id/unlike</code></p>
-<h3 id='http-result'>HTTP Result</h3>
+
+<h3 id="http-result">HTTP Result</h3>
+
 <p>Empty Response</p>
 
-          <h1 id='libraries'>Libraries</h1><h2 id='official-libraries'>Official Libraries</h2>
+          <h1 id="libraries">Libraries</h1>
+
+<h2 id="official-libraries">Official Libraries</h2>
+
 <table><thead>
 <tr>
 <th>Langage</th>
