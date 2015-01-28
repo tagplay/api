@@ -47,7 +47,7 @@ var client = require('tagplay')({
 	token: 'ABCDEFG:ABCDEFG:ABCDEFG'
 });
 
-client.getPost('project_id', 'feed_id', 'post_id' function(error, body) {
+client.getPost('project_id', 'feed_id', 'post_id', function(error, body) {
 	console.log(body); // json object
 });
 ```
@@ -74,7 +74,7 @@ var client = require('tagplay')({
 	token: 'ABCDEFG:ABCDEFG:ABCDEFG'
 });
 
-client.flagPost('project_id', 'feed_id', 'post_id' function(error, body) {
+client.flagPost('project_id', 'feed_id', 'post_id', function(error, body) {
 	console.log(body); // json object
 });
 ```
@@ -99,7 +99,7 @@ var client = require('tagplay')({
 	token: 'ABCDEFG:ABCDEFG:ABCDEFG'
 });
 
-client.unflagPost('project_id', 'feed_id', 'post_id' function(error, body) {
+client.unflagPost('project_id', 'feed_id', 'post_id', function(error, body) {
 	console.log(body); // json object
 });
 ```
@@ -125,7 +125,7 @@ var client = require('tagplay')({
 	token: 'ABCDEFG:ABCDEFG:ABCDEFG
 '});
 
-client.likePost('project_id', 'feed_id', 'post_id' function(error, body) {
+client.likePost('project_id', 'feed_id', 'post_id', function(error, body) {
 	console.log(body); // json object
 });
 ```
@@ -150,7 +150,7 @@ var client = require('tagplay')({
 	token: 'ABCDEFG:ABCDEFG:ABCDEFG'
 });
 
-client.unlikePost('project_id', 'feed_id', 'post_id' function(error, body) {
+client.unlikePost('project_id', 'feed_id', 'post_id', function(error, body) {
 	console.log(body); // json object
 });
 ```
