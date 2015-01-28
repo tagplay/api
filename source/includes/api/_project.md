@@ -20,7 +20,9 @@ Data will be a list of [Project](#project) objects.
 ## Get Project Info
 
 ```javascript
-var client = require('tagplay')({token: 'ABCDEFG:ABCDEFG:ABCDEFG'});
+var client = require('tagplay')({
+	token: 'ABCDEFG:ABCDEFG:ABCDEFG'
+});
 
 client.getProject('project_id', function(error, body) {
 	console.log(body); // json object
