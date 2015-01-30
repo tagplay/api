@@ -23,7 +23,7 @@ Tagplay.Project.get!('project_id', client)
 
 ### HTTP Request
 
-`GET https://api.tagplay.co/v1/project/:project_id`
+**GET** `/v1/project/:project_id`
 
 ### HTTP Result
 

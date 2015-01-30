@@ -24,7 +24,7 @@ Tagplay.Feed.list!('project_id', client)
 
 ### HTTP Request:
 
-`GET https://api.tagplay.co/v1/project/:project_id/feed`
+**GET** `/v1/project/:project_id/feed`
 
 ### Query Parameters:
 
@@ -43,7 +43,6 @@ in the `pagination` key in the <a href="#data-objects">Root Object</a>.
 Data will be an array of [Feed](#feed) items.
 
 
-
 ## Get Feed Info
 
 ```shell
@@ -57,7 +56,7 @@ Tagplay.Feed.get!('project_id', 'feed_id', client)
 
 ### HTTP Request
 
-`GET https://api.tagplay.co/v1/project/:project_id/feed/:feed_id`
+**GET** `/v1/project/:project_id/feed/:feed_id`
 
 ### HTTP Result
 

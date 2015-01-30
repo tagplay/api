@@ -23,7 +23,7 @@ Tagplay.Post.list!('project_id', 'feed_id', client)
 
 ### HTTP Request
 
-`GET https://api.tagplay.co/v1/project/:project_id/feed/:feed_id/post`
+**GET** `/v1/project/:project_id/feed/:feed_id/post`
 
 ### Query Parameters
 
@@ -65,7 +65,7 @@ Tagplay.Post.get!('project_id', 'feed_id', 'post_id' client)
 
 ### HTTP Request
 
-`GET https://api.tagplay.co/v1/project/:project_id/feed/:feed_id/post/:post_id`
+**GET** `/v1/project/:project_id/feed/:feed_id/post/:post_id`
 
 ### HTTP Result
 
@@ -95,7 +95,7 @@ Tagplay.Post.flag!('project_id', 'feed_id', 'post_id' client)
 
 ### HTTP Request
 
-`POST https://api.tagplay.co/v1/project/:project_id/feed/:feed_id/post/:post_id/flag`
+**POST** `/v1/project/:project_id/feed/:feed_id/post/:post_id/flag`
 
 ### HTTP Result
 
@@ -123,7 +123,7 @@ Tagplay.Post.unflag!('project_id', 'feed_id', 'post_id' client)
 
 ### HTTP Request
 
-`POST https://api.tagplay.co/v1/project/:project_id/feed/:feed_id/post/:post_id/unflag`
+**POST** `/v1/project/:project_id/feed/:feed_id/post/:post_id/unflag`
 
 ### HTTP Result
 
@@ -152,7 +152,7 @@ Tagplay.Post.like!('project_id', 'feed_id', 'post_id' client)
 
 ### HTTP Request
 
-`POST https://api.tagplay.co/v1/project/:project_id/feed/:feed_id/post/:post_id/like`
+**POST** `/v1/project/:project_id/feed/:feed_id/post/:post_id/like`
 
 ### HTTP Result
 
@@ -180,7 +180,7 @@ Tagplay.Post.unlike!('project_id', 'feed_id', 'post_id' client)
 
 ### HTTP Request
 
-`POST https://api.tagplay.co/v1/project/:project_id/feed/:feed_id/post/:post_id/unlike`
+**POST** `/v1/project/:project_id/feed/:feed_id/post/:post_id/unlike`
 
 ### HTTP Result
 
