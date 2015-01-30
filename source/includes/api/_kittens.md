@@ -25,21 +25,21 @@ curl "http://example.com/api/kittens"
 
 ```json
 [
-	{
-		"id": 1,
-		"name": "Fluffums",
-		"breed": "calico",
-		"fluffiness": 6,
-		"cuteness": 7
-	},
-	...
-	{
-		"id": 2,
-		"name": "Isis",
-		"breed": "unknown",
-		"fluffiness": 5,
-		"cuteness": 10
-	}
+  {
+    "id": 1,
+    "name": "Fluffums",
+    "breed": "calico",
+    "fluffiness": 6,
+    "cuteness": 7
+  },
+  ...
+  {
+    "id": 2,
+    "name": "Isis",
+    "breed": "unknown",
+    "fluffiness": 5,
+    "cuteness": 10
+  }
 ]
 ```
 
@@ -85,11 +85,11 @@ curl "http://example.com/api/kittens/3"
 
 ```json
 {
-	"id": 2,
-	"name": "Isis",
-	"breed": "unknown",
-	"fluffiness": 5,
-	"cuteness": 10
+  "id": 2,
+  "name": "Isis",
+  "breed": "unknown",
+  "fluffiness": 5,
+  "cuteness": 10
 }
 ```
 
