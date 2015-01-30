@@ -13,8 +13,8 @@ client.listPost('project_id', 'feed_id', function(error, body) {
 });
 ```
 ```shell
-curl "https://api.tagplay.co/v1/project/PROJECT_ID/feed/FEED_ID/post"
--H "Authorization: Bearer $TOKEN"
+curl -X GET -H "Authorization: Bearer $TOKEN" \
+"https://api.tagplay.co/v1/project/PROJECT_ID/feed/FEED_ID/post"
 ```
 ```elixir
 client = Tagplay.client("ABCDEFG:ABCDEFG:ABCDEFG")
@@ -55,8 +55,8 @@ client.getPost('project_id', 'feed_id', 'post_id', function(error, body) {
 });
 ```
 ```shell
-curl "https://api.tagplay.co/v1/project/PROJECT_ID/feed/FEED_ID/post/POST_ID"
--H "Authorization: Bearer $TOKEN"
+curl -X GET -H "Authorization: Bearer $TOKEN" \
+"https://api.tagplay.co/v1/project/PROJECT_ID/feed/FEED_ID/post/POST_ID"
 ```
 ```elixir
 client = Tagplay.client("ABCDEFG:ABCDEFG:ABCDEFG")
@@ -85,8 +85,8 @@ client.flagPost('project_id', 'feed_id', 'post_id', function(error, body) {
 });
 ```
 ```shell
-curl -X POST "https://api.tagplay.co/v1/project/PROJECT_ID/feed/FEED_ID/post/POST_ID/flag"
--H "Authorization: Bearer $TOKEN"
+curl -X POST -H "Authorization: Bearer $TOKEN" \
+"https://api.tagplay.co/v1/project/PROJECT_ID/feed/FEED_ID/post/POST_ID/flag"
 ```
 ```elixir
 client = Tagplay.client("ABCDEFG:ABCDEFG:ABCDEFG")
@@ -113,8 +113,9 @@ client.unflagPost('project_id', 'feed_id', 'post_id', function(error, body) {
 });
 ```
 ```shell
-curl -X POST "https://api.tagplay.co/v1/project/PROJECT_ID/feed/FEED_ID/post/POST_ID/unflag"
--H "Authorization: Bearer $TOKEN"
+curl -X POST -H "Authorization: Bearer $TOKEN" \
+"https://api.tagplay.co/v1/project/PROJECT_ID/feed/FEED_ID/post/POST_ID/unflag"
+
 ```
 ```elixir
 client = Tagplay.client("ABCDEFG:ABCDEFG:ABCDEFG")
@@ -142,8 +143,8 @@ client.likePost('project_id', 'feed_id', 'post_id', function(error, body) {
 });
 ```
 ```shell
-curl -X POST "https://api.tagplay.co/v1/project/PROJECT_ID/feed/FEED_ID/post/POST_ID/like"
--H "Authorization: Bearer $TOKEN"
+curl -X POST -H "Authorization: Bearer $TOKEN" |
+"https://api.tagplay.co/v1/project/PROJECT_ID/feed/FEED_ID/post/POST_ID/like"
 ```
 ```elixir
 client = Tagplay.client("ABCDEFG:ABCDEFG:ABCDEFG")
@@ -170,8 +171,8 @@ client.unlikePost('project_id', 'feed_id', 'post_id', function(error, body) {
 });
 ```
 ```shell
-curl -X POST "https://api.tagplay.co/v1/project/PROJECT_ID/feed/FEED_ID/post/POST_ID/unlike"
--H "Authorization: Bearer $TOKEN"
+curl -X POST -H "Authorization: Bearer $TOKEN" \
+"https://api.tagplay.co/v1/project/PROJECT_ID/feed/FEED_ID/post/POST_ID/unlike"
 ```
 ```elixir
 client = Tagplay.client("ABCDEFG:ABCDEFG:ABCDEFG")
