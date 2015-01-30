@@ -33,3 +33,9 @@ We redirect your content when it shares to social media.
 
 You can use a certain **#tag** from one of your social media profiles to control which content goes
 where on your website.
+
+This API documentation describes version 1 of the api service and can be found at **`http://api.tagplay.co/v1`**.
+
+<aside class="warning">
+For everyone's safety the api endpoint is only accessible using <strong>HTTPS</strong>.
+</aside>
