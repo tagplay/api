@@ -18,7 +18,10 @@ Resulting Data from query will be found under the `data` attribute of that objec
 
 If the data is an array a `pagination` object will appear in the root describing pagination details.
 
-<aside class="warning">Note that previous_url, and next_url will only appear when there are results in those pages.</aside>
+<aside class="notice">
+Note that <strong>.previous_url</strong>, and <strong>.next_url</strong> will only appear when
+there are results in those pages.
+</aside>
 
 
 ## Media
