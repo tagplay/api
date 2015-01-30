@@ -5,11 +5,11 @@
 
 ```javascript
 var client = require('tagplay')({
-	token: 'ABCDEFG:ABCDEFG:ABCDEFG'
+  token: 'ABCDEFG:ABCDEFG:ABCDEFG'
 });
 
 client.getProject('project_id', function(error, body) {
-	console.log(body); // json object
+  console.log(body); // json object
 });
 ```
 ```shell
