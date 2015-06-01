@@ -61,4 +61,4 @@ Tagplay.Feed.get!('project_id', 'feed_id', client)
 
 ### HTTP Result
 
-Data will be a[Feed](#feed) object.
+Data will be a [Feed](#feed) object.
