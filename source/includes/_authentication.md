@@ -19,7 +19,7 @@ Tagplay.Project.list!(client)
 ```
 
 Tagplay uses [JSON Web Tokens](http://jwt.io) for authorization.
-You generate these from the [Dashboard](https://beta.tagplay.co/dashboard)
+You generate these from the Get Code/Designer section for each feed.
 
 <aside class="notice">
 Please note that tokens have scope.
