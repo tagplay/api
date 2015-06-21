@@ -74,7 +74,7 @@ username   | String | Username of the user who posted to the Provider
 ```json
 {
   "provider": ProviderObject,
-  "created_time": "2014-11-05T15:48:23",
+  "added_time": "2014-11-05T15:48:23",
   "id": "0020bad0-9e61-11e4-bf88-20c9d08a778d",
   "text": "Selfie at #tagplay",
   "normalized_text": "Selfie at tagplay",
