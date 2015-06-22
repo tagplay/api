@@ -146,7 +146,7 @@ there are results in those pages.
 
 <h2 id="provider">Provider</h2>
 <pre><code class="highlight json"><span class="p">{</span><span class="w">
-  </span><span class="s2">"added_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-11-05T15:48:24.560047"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-11-05T15:48:24.560047"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"instagram"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example_user"</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -165,9 +165,9 @@ there are results in those pages.
 <td>Name of the Provider</td>
 </tr>
 <tr>
-<td>added_time</td>
+<td>created_time</td>
 <td>JSONDate</td>
-<td>Time the item was added <em>to the Provider</em></td>
+<td>Time the item was created <em>at the Provider</em></td>
 </tr>
 <tr>
 <td>username</td>
@@ -179,7 +179,7 @@ there are results in those pages.
 <h2 id="post">Post</h2>
 <pre><code class="highlight json"><span class="p">{</span><span class="w">
   </span><span class="s2">"provider"</span><span class="p">:</span><span class="w"> </span><span class="err">ProviderObject</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"created_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-11-05T15:48:23"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"added_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-11-05T15:48:23"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0020bad0-9e61-11e4-bf88-20c9d08a778d"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Selfie at #tagplay"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"normalized_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Selfie at tagplay"</span><span class="p">,</span><span class="w">
@@ -217,9 +217,9 @@ there are results in those pages.
 <td>Type of the Post</td>
 </tr>
 <tr>
-<td>created_time</td>
+<td>added_time</td>
 <td>JSONDate</td>
-<td>Time the Post was created</td>
+<td>Time the Post was added to the feed</td>
 </tr>
 <tr>
 <td>provider</td>
