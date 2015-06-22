@@ -57,7 +57,7 @@ sources | Array  | Array of Objects describing different sizes of the Media
 
 ```json
 {
-  "added_time": "2014-11-05T15:48:24.560047",
+  "created_time": "2014-11-05T15:48:24.560047",
   "name": "instagram",
   "username": "example_user"
 }
@@ -66,7 +66,7 @@ sources | Array  | Array of Objects describing different sizes of the Media
 Parameter    | Type  | Description
 ------------ | ----- | ------------
 name       | String | Name of the Provider
-added_time | JSONDate | Time the item was added *to the Provider*
+created_time | JSONDate | Time the item was created *at the Provider*
 username   | String | Username of the user who posted to the Provider
 
 ## Post
@@ -98,7 +98,7 @@ Parameter    | Type  | Description
 ------------ | ----- | ------------
 id           | String | Unique UUID for the Post
 type          | String | Type of the Post
-created_time | JSONDate | Time the Post was created
+added_time   | JSONDate | Time the Post was added to the feed
 provider     | [Provider](#provider) | Provider info.
 text         | String | The original text
 normalized_text | String | Normalized version of the text
