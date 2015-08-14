@@ -9,14 +9,20 @@
     "previous_url": "/v1/project?offset=0",
     "next_url": "/v1/project?offset=40"
   },
+  "meta": {
+    "branded": false,
+    "trigger_tags": []
+  },
   "data": Object or Array
 }
 ```
 
 All API calls reply with a root object.
-Resulting Data from query will be found under the `data` attribute of that object.
+The resulting data from the query will be found under the `data` attribute of that object.
 
 If the data is an array a `pagination` object will appear in the root describing pagination details.
+
+Additionally, a `meta` object may contain some meta information for the data that may be useful for processing it (primarily, it is used by Tagplay's own libraries). Currently, this object is empty except in the post endpoints, where it includes the properties `branded`, a boolean indicating whether Tagplay's widget should include branding, and `trigger_tags`, a list of tags used in formulas sending to the feed whose posts are being fetched, which can be used to process the text of the post to remove those tags.
 
 <aside class="notice">
 Note that <strong>.previous_url</strong>, and <strong>.next_url</strong> will only appear when
