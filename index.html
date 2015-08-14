@@ -73,14 +73,20 @@ For everyone&rsquo;s safety the api endpoint is only accessible using <strong>HT
     </span><span class="s2">"previous_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/v1/project?offset=0"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"next_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/v1/project?offset=40"</span><span class="w">
   </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"branded"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"trigger_tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="err">Object</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="err">Array</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
 <p>All API calls reply with a root object.
-Resulting Data from query will be found under the <code class="prettyprint">data</code> attribute of that object.</p>
+The resulting data from the query will be found under the <code class="prettyprint">data</code> attribute of that object.</p>
 
 <p>If the data is an array a <code class="prettyprint">pagination</code> object will appear in the root describing pagination details.</p>
+
+<p>Additionally, a <code class="prettyprint">meta</code> object may contain some meta information for the data that may be useful for processing it (primarily, it is used by Tagplay&rsquo;s own libraries). Currently, this object is empty except in the post endpoints, where it includes the properties <code class="prettyprint">branded</code>, a boolean indicating whether Tagplay&rsquo;s widget should include branding, and <code class="prettyprint">trigger_tags</code>, a list of tags used in formulas sending to the feed whose posts are being fetched, which can be used to process the text of the post to remove those tags.</p>
 
 <aside class="notice">
 Note that <strong>.previous_url</strong>, and <strong>.next_url</strong> will only appear when
