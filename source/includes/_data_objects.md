@@ -65,7 +65,8 @@ sources | Array  | Array of Objects describing different sizes of the Media
 {
   "created_time": "2014-11-05T15:48:24.560047",
   "name": "instagram",
-  "username": "example_user"
+  "username": "example_user",
+  "user_id": "4253645776"
 }
 ```
 
@@ -74,6 +75,7 @@ Parameter    | Type  | Description
 name       | String | Name of the Provider
 created_time | JSONDate | Time the item was created *at the Provider*
 username   | String | Username of the user who posted to the Provider
+user_id    | String | The ID of the user who posted to the Provider
 
 ## Post
 
@@ -82,12 +84,22 @@ username   | String | Username of the user who posted to the Provider
   "provider": ProviderObject,
   "added_time": "2014-11-05T15:48:23",
   "id": "0020bad0-9e61-11e4-bf88-20c9d08a778d",
-  "text": "Selfie at #tagplay",
-  "normalized_text": "Selfie at tagplay",
-  "stripped_text": "Selfie at",
+  "text": "@example_user https://tagplay.co Selfie at #tagplay",
+  "normalized_text": "@example_user https://tagplay.co Selfie at tagplay",
+  "stripped_text": "@example_user https://tagplay.co Selfie at",
+  "tagless_text": "@example_user https://tagplay.co Selfie at",
   "type": "image",
   "image": MediaObject,
   "tags": [ "tagplay" ],
+  "mentions": [ "example_user" ],
+  "links": [
+    {
+      "href": "https://tagplay.co",
+      "text": "https://tagplay.co",
+      "description": null,
+      "index": [14, 32]
+    }
+  ],
   "meta": {
     "pinned": false,
     "removed": false,
@@ -100,25 +112,32 @@ username   | String | Username of the user who posted to the Provider
 
 ```
 
-Parameter    | Type  | Description
------------- | ----- | ------------
-id           | String | Unique UUID for the Post
-type          | String | Type of the Post
-added_time   | JSONDate | Time the Post was added to the feed
-provider     | [Provider](#provider) | Provider info.
-text         | String | The original text
-normalized_text | String | Normalized version of the text
-stripped_text | String | Stripped version of the text
-image         | [Media](#media) | Linked image
-video         | [Media](#media) | Linked video
-tags          | Array | Arrays of tag strings
-meta          | Object | Object of meta information
-*meta*.pinned      | Boolean | Is the Post pinned to the top of the feed
-*meta*.removed     | Boolean | Has the Post been removed
-*meta*.likes       | Integer | Number of likes
-*meta*.flags       | Integer | Number of flags
-*meta*.has_liked   | Boolean | Have you like it?
-*meta*.has_flagged | Boolean | Have you flagged it?
+Parameter             | Type                  | Description
+--------------------- | --------------------- | ------------
+id                    | String                | Unique UUID for the Post
+type                  | String                | Type of the Post
+added_time            | JSONDate              | Time the Post was added to the feed
+provider              | [Provider](#provider) | Provider info.
+text                  | String                | The original text
+normalized_text       | String                | Normalized version of the text
+stripped_text         | String                | Stripped version of the text
+tagless_text          | String                | Tagless version of the text
+image                 | [Media](#media)       | Linked image
+video                 | [Media](#media)       | Linked video
+tags                  | Array                 | Array of tag strings
+mentions              | Array                 | Array of usernames mentioned in the Post
+links                 | Array                 | Array of link entities in the Post
+*links[]*.href        | String                | The URL to link to
+*links[]*.text        | String                | Link text
+*links[]*.description | String                | A description of the link (optional)
+*links[]*.index       | Array                 | The start and end index of the link in the post text
+meta                  | Object                | Object of meta information
+*meta*.pinned         | Boolean               | Is the Post pinned to the top of the feed
+*meta*.removed        | Boolean               | Has the Post been removed
+*meta*.likes          | Integer               | Number of likes
+*meta*.flags          | Integer               | Number of flags
+*meta*.has_liked      | Boolean               | Have you liked it?
+*meta*.has_flagged    | Boolean               | Have you flagged it?
 
 ## Feed
 
