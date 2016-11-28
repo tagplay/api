@@ -159,7 +159,7 @@ Tagplay.Post.like!('project_id', 'feed_id', 'post_id' client)
 
 Empty Response
 
-## Unike Post
+## Unlike Post
 
 ```javascript
 var client = require('tagplay')({

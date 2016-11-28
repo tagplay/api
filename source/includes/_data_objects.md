@@ -281,3 +281,8 @@ Parameter | Type   | Description
 --------- | ------ | -----------
 id        | String | Unique UUID for the Project
 name      | String | The name of the Project
+
+
+## Embed data
+
+Our embed data comes from our [Iframely](https://github.com/itteco/iframely) server. Please check there for documentation of the Iframely API.

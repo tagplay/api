@@ -15,6 +15,7 @@ includes:
   - api/project
   - api/feed
   - api/post
+  - api/embed
   - libraries
 
 
