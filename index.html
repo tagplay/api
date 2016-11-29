@@ -6,27 +6,100 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>Tagplay API Reference</title>
 
-    <link href="stylesheets/screen.css" rel="stylesheet" type="text/css" media="screen" />
-    <link href="stylesheets/print.css" rel="stylesheet" type="text/css" media="print" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-      <script src="javascripts/all.js" type="text/javascript"></script>
-
-      <script>
-        $(function() {
-          setupLanguages(["shell","javascript","elixir"]);
-        });
-      </script>
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #f8f8f2;
+  background-color: #272822;
+}
+.highlight .err {
+  color: #272822;
+  background-color: #f92672;
+}
+.highlight .c, .highlight .cd, .highlight .cm, .highlight .c1, .highlight .cs {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #f4bf75;
+}
+.highlight .nt {
+  color: #f4bf75;
+}
+.highlight .o, .highlight .ow {
+  color: #f8f8f2;
+}
+.highlight .p, .highlight .pi {
+  color: #f8f8f2;
+}
+.highlight .gi {
+  color: #a6e22e;
+}
+.highlight .gd {
+  color: #f92672;
+}
+.highlight .gh {
+  color: #66d9ef;
+  background-color: #272822;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #ae81ff;
+}
+.highlight .kc {
+  color: #fd971f;
+}
+.highlight .kt {
+  color: #fd971f;
+}
+.highlight .kd {
+  color: #fd971f;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #a6e22e;
+}
+.highlight .sr {
+  color: #a1efe4;
+}
+.highlight .si {
+  color: #cc6633;
+}
+.highlight .se {
+  color: #cc6633;
+}
+.highlight .nn {
+  color: #f4bf75;
+}
+.highlight .nc {
+  color: #f4bf75;
+}
+.highlight .no {
+  color: #f4bf75;
+}
+.highlight .na {
+  color: #66d9ef;
+}
+.highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mb, .highlight .mx {
+  color: #a6e22e;
+}
+.highlight .ss {
+  color: #a6e22e;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index">
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;javascript&quot;,&quot;elixir&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
-        <img src="images/navbar.png" />
+        <img src="images/navbar.png" alt="Navbar" />
       </span>
     </a>
     <div class="tocify-wrapper">
-      <img src="images/logo.png" />
+      <img src="images/logo.png" alt="Logo" />
         <div class="lang-selector">
               <a href="#" data-language-name="shell">shell</a>
               <a href="#" data-language-name="javascript">nodejs</a>
@@ -65,22 +138,21 @@ For everyone&rsquo;s safety the api endpoint is only accessible using <strong>HT
 </aside>
 
           <h1 id="data-objects">Data Objects</h1>
-<pre><code class="highlight json"><span class="p">{</span><span class="w">
-  </span><span class="s2">"pagination"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"offset"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">505</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"previous_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/v1/project?offset=0"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"next_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/v1/project?offset=40"</span><span class="w">
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"pagination"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"offset"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">505</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"previous_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/v1/project?offset=0"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"next_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/v1/project?offset=40"</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"branded"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"trigger_tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+  </span><span class="nt">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"branded"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"trigger_tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="err">Object</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="err">Array</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="err">ObjectOrArray</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-
 <p>All API calls reply with a root object.
 The resulting data from the query will be found under the <code class="prettyprint">data</code> attribute of that object.</p>
 
@@ -94,23 +166,22 @@ there are results in those pages.
 </aside>
 
 <h2 id="media">Media</h2>
-<pre><code class="highlight json"><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10f85f52-9e61-11e4-82fd-20c9d08a778d"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"sources"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10f85f52-9e61-11e4-82fd-20c9d08a778d"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"sources"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">640</span><span class="p">,</span><span class="w"> </span><span class="s2">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">640</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1ec51076-9e61-11e4-8b5d-20c9d08a778d"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/1ec51076.jpg"</span><span class="w">
+      </span><span class="nt">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">640</span><span class="p">,</span><span class="w"> </span><span class="nt">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">640</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1ec51076-9e61-11e4-8b5d-20c9d08a778d"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/1ec51076.jpg"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">320</span><span class="p">,</span><span class="w"> </span><span class="s2">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">230</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1f36822e-9e61-11e4-a11b-20c9d08a778d"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/1f36822e.jpg"</span><span class="w">
+      </span><span class="nt">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">320</span><span class="p">,</span><span class="w"> </span><span class="nt">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">230</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1f36822e-9e61-11e4-a11b-20c9d08a778d"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/1f36822e.jpg"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -151,13 +222,14 @@ there are results in those pages.
 </tbody></table>
 
 <h2 id="provider">Provider</h2>
-<pre><code class="highlight json"><span class="p">{</span><span class="w">
-  </span><span class="s2">"created_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-11-05T15:48:24.560047"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"instagram"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example_user"</span><span class="w">
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"created_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-11-05T15:48:24.560047"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"instagram"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example_user"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4253645776"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"origin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/49bc325e"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -176,35 +248,228 @@ there are results in those pages.
 <td>Time the item was created <em>at the Provider</em></td>
 </tr>
 <tr>
+<td>origin</td>
+<td>String</td>
+<td>URL to the original social media post on the Provider (may be blank for some providers)</td>
+</tr>
+<tr>
 <td>username</td>
 <td>String</td>
-<td>Username of the user who posted to the Provider</td>
+<td><em>(Deprecated; use the username attribute on the user object instead.)</em> Username of the user who posted to the Provider</td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>String</td>
+<td><em>(Deprecated; use the id attribute on the user object instead.)</em> The ID of the user who posted to the Provider</td>
+</tr>
+</tbody></table>
+
+<h2 id="user">User</h2>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4253645776"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example_user"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example User"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"profile_picture"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/2b45c78d.jpg"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>The ID of the user</td>
+</tr>
+<tr>
+<td>username</td>
+<td>String</td>
+<td>The username of the user (may be blank for some providers)</td>
+</tr>
+<tr>
+<td>full_name</td>
+<td>String</td>
+<td>The full name of the user (may be blank for some users)</td>
+</tr>
+<tr>
+<td>profile_picture</td>
+<td>String</td>
+<td>The URL to the user&rsquo;s profile picture</td>
+</tr>
+</tbody></table>
+
+<h2 id="link">Link</h2>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://tagplay.co"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://tagplay.co"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"index"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">14</span><span class="p">,</span><span class="w"> </span><span class="mi">32</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>href</td>
+<td>String</td>
+<td>The URL to link to</td>
+</tr>
+<tr>
+<td>text</td>
+<td>String</td>
+<td>Link text</td>
+</tr>
+<tr>
+<td>description</td>
+<td>String</td>
+<td>A description of the link (optional)</td>
+</tr>
+<tr>
+<td>index</td>
+<td>Array</td>
+<td>The start and end index of the link in the post text</td>
+</tr>
+</tbody></table>
+
+<h2 id="linked-metadata">Linked Metadata</h2>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/page"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Page title"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Page description"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"image"</span><span class="p">:</span><span class="w"> </span><span class="err">MediaObject</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>href</td>
+<td>String</td>
+<td>The URL to which the linked metadata points</td>
+</tr>
+<tr>
+<td>title</td>
+<td>String</td>
+<td>The title of the linked page</td>
+</tr>
+<tr>
+<td>description</td>
+<td>String</td>
+<td>The description of the linked page</td>
+</tr>
+<tr>
+<td>image</td>
+<td><a href="#media">Media</a></td>
+<td>The image associated with the linked metadata</td>
+</tr>
+</tbody></table>
+
+<h2 id="location">Location</h2>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Feature"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"geometry"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Point"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="mf">101.22495889664</span><span class="p">,</span><span class="w">
+      </span><span class="mf">12.684491887585</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A place"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"instagram_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"534769453"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"twitter_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4656835846858"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"facebook_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1242464575684523413"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>type</td>
+<td>String</td>
+<td>The type of location</td>
+</tr>
+<tr>
+<td>geometry</td>
+<td>String</td>
+<td>The geometry of the location</td>
+</tr>
+<tr>
+<td><em>geometry</em>.type</td>
+<td>String</td>
+<td>The type of the geometry</td>
+</tr>
+<tr>
+<td><em>geometry</em>.coordinates</td>
+<td>Array</td>
+<td>A [longitude, latitude] array.</td>
+</tr>
+<tr>
+<td>properties</td>
+<td>Object</td>
+<td>A set of optional extra information about the location</td>
+</tr>
+<tr>
+<td><em>properties</em>.name</td>
+<td>String</td>
+<td>The name of the location</td>
+</tr>
+<tr>
+<td><em>properties</em>.<em>{provider}</em>_id</td>
+<td>String</td>
+<td>The ID of the location given by the provider</td>
 </tr>
 </tbody></table>
 
 <h2 id="post">Post</h2>
-<pre><code class="highlight json"><span class="p">{</span><span class="w">
-  </span><span class="s2">"provider"</span><span class="p">:</span><span class="w"> </span><span class="err">ProviderObject</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"added_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-11-05T15:48:23"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0020bad0-9e61-11e4-bf88-20c9d08a778d"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Selfie at #tagplay"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"normalized_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Selfie at tagplay"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"stripped_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Selfie at"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="err">MediaObject</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"tagplay"</span><span class="w"> </span><span class="p">],</span><span class="w">
-  </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"pinned"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"removed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"likes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"flags"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"has_liked"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"has_flagged"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"provider"</span><span class="p">:</span><span class="w"> </span><span class="err">ProviderObject</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"user"</span><span class="p">:</span><span class="w"> </span><span class="err">UserObject</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"added_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-11-05T15:48:23"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"published_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-11-05T15:48:23"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"removed_time"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0020bad0-9e61-11e4-bf88-20c9d08a778d"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@example_user https://tagplay.co Selfie at #tagplay"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"normalized_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@example_user https://tagplay.co Selfie at tagplay"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"stripped_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@example_user https://tagplay.co Selfie at"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"tagless_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@example_user https://tagplay.co Selfie at"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"image"</span><span class="p">:</span><span class="w"> </span><span class="err">MediaObject</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"video"</span><span class="p">:</span><span class="w"> </span><span class="err">MediaObject</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"tagplay"</span><span class="w"> </span><span class="p">],</span><span class="w">
+  </span><span class="nt">"mentions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"example_user"</span><span class="w"> </span><span class="p">],</span><span class="w">
+  </span><span class="nt">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="err">LinkObject</span><span class="p">,</span><span class="w">
+    </span><span class="err">LinkObject</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nt">"linked_metadata"</span><span class="p">:</span><span class="w"> </span><span class="err">LinkedMetadataObject</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"location"</span><span class="p">:</span><span class="w"> </span><span class="err">LocationObject</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"pinned"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"removed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"likes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"flags"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"has_liked"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"has_flagged"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-
 </span></code></pre>
-
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -228,6 +493,16 @@ there are results in those pages.
 <td>Time the Post was added to the feed</td>
 </tr>
 <tr>
+<td>published_time</td>
+<td>JSONDate</td>
+<td>Time the Post was published in the feed</td>
+</tr>
+<tr>
+<td>removed_time</td>
+<td>JSONDate</td>
+<td>Time the Post was removed from the feed, if it has been removed</td>
+</tr>
+<tr>
 <td>provider</td>
 <td><a href="#provider">Provider</a></td>
 <td>Provider info.</td>
@@ -248,6 +523,11 @@ there are results in those pages.
 <td>Stripped version of the text</td>
 </tr>
 <tr>
+<td>tagless_text</td>
+<td>String</td>
+<td>Tagless version of the text</td>
+</tr>
+<tr>
 <td>image</td>
 <td><a href="#media">Media</a></td>
 <td>Linked image</td>
@@ -260,7 +540,27 @@ there are results in those pages.
 <tr>
 <td>tags</td>
 <td>Array</td>
-<td>Arrays of tag strings</td>
+<td>Array of tag strings</td>
+</tr>
+<tr>
+<td>mentions</td>
+<td>Array</td>
+<td>Array of usernames mentioned in the Post</td>
+</tr>
+<tr>
+<td>links</td>
+<td>Array(<a href="#link">Link</a>)</td>
+<td>Array of link entities in the Post</td>
+</tr>
+<tr>
+<td>linked_metadata</td>
+<td><a href="#linked-metadata">Linked Metadata</a></td>
+<td>Information about associated link metadata</td>
+</tr>
+<tr>
+<td>location</td>
+<td><a href="#location">Location</a></td>
+<td>GeoJSON info about the location where this Post was made</td>
 </tr>
 <tr>
 <td>meta</td>
@@ -290,7 +590,7 @@ there are results in those pages.
 <tr>
 <td><em>meta</em>.has_liked</td>
 <td>Boolean</td>
-<td>Have you like it?</td>
+<td>H</td>
 </tr>
 <tr>
 <td><em>meta</em>.has_flagged</td>
@@ -300,18 +600,17 @@ there are results in those pages.
 </tbody></table>
 
 <h2 id="feed">Feed</h2>
-<pre><code class="highlight json"><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a10b01ac-c1e7-495b-acfb-93f1a10dac16"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Me myself and Tagplay"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"preview_media"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"046f1ba0-6196-47f2-b40b-b21d81548246"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/1f36822e.jpg"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Selfie at tagplay"</span><span class="w">
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a10b01ac-c1e7-495b-acfb-93f1a10dac16"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Me myself and Tagplay"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"preview_media"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"046f1ba0-6196-47f2-b40b-b21d81548246"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/1f36822e.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Selfie at tagplay"</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"public_media_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+  </span><span class="nt">"public_media_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -357,12 +656,11 @@ there are results in those pages.
 </tbody></table>
 
 <h2 id="project">Project</h2>
-<pre><code class="highlight json"><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1cb0221e-c401-4721-977e-21748d4447bb"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General project"</span><span class="w">
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1cb0221e-c401-4721-977e-21748d4447bb"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General project"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -382,22 +680,23 @@ there are results in those pages.
 </tr>
 </tbody></table>
 
+<h2 id="embed-data">Embed data</h2>
+
+<p>Our embed data comes from our <a href="https://github.com/itteco/iframely">Iframely</a> server. Please check there for documentation of the Iframely API.</p>
+
           <h1 id="authentication">Authentication</h1>
-<pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span>
   <span class="na">token</span><span class="p">:</span> <span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG'</span>
 <span class="p">});</span>
 <span class="nx">client</span><span class="p">.</span><span class="nx">getProject</span><span class="p">(</span><span class="s1">'project_id'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span> <span class="c1">// json object</span>
 <span class="p">});</span>
-</code></pre>
-<pre><code class="highlight shell"><span class="nb">export </span><span class="nv">TOKEN</span><span class="o">=</span><span class="s2">"ABCDEFG:ABCDEFG:ABCDEFG"</span>
+</code></pre><pre class="highlight shell"><code><span class="nb">export </span><span class="nv">TOKEN</span><span class="o">=</span><span class="s2">"ABCDEFG:ABCDEFG:ABCDEFG"</span>
 curl -X GET <span class="s2">"https://api.tagplay.co/v1/project"</span> <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span>
-</code></pre>
-<pre><code class="highlight elixir"><span class="n">client</span> <span class="o">=</span> <span class="no">Tagplay</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="sd">"</span><span class="s2">ABCDEFG:ABCDEFG:ABCDEFG"</span><span class="p">)</span>
+</code></pre><pre class="highlight elixir"><code><span class="n">client</span> <span class="o">=</span> <span class="no">Tagplay</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="sd">"</span><span class="s2">ABCDEFG:ABCDEFG:ABCDEFG"</span><span class="p">)</span>
 <span class="no">Tagplay</span><span class="o">.</span><span class="no">Project</span><span class="o">.</span><span class="n">list!</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
 </code></pre>
-
 <p>Tagplay uses <a href="http://jwt.io">JSON Web Tokens</a> for authorization.
 You generate these from the Get Code/Designer section for each feed.</p>
 
@@ -409,21 +708,18 @@ They can be generate for a whole project or just a specific feed.
           <h1 id="projects">Projects</h1>
 
 <h2 id="get-project-info">Get Project Info</h2>
-<pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span>
   <span class="na">token</span><span class="p">:</span> <span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG'</span>
 <span class="p">});</span>
 
 <span class="nx">client</span><span class="p">.</span><span class="nx">getProject</span><span class="p">(</span><span class="s1">'project_id'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span> <span class="c1">// json object</span>
 <span class="p">});</span>
-</code></pre>
-<pre><code class="highlight shell">curl -X GET -H <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span> <span class="se">\</span>
+</code></pre><pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span> <span class="se">\</span>
 <span class="s2">"https://api.tagplay.co/v1/project/PROJECT_ID"</span>
-</code></pre>
-<pre><code class="highlight elixir"><span class="n">client</span> <span class="o">=</span> <span class="no">Tagplay</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="sd">"</span><span class="s2">ABCDEFG:ABCDEFG:ABCDEFG"</span><span class="p">)</span>
+</code></pre><pre class="highlight elixir"><code><span class="n">client</span> <span class="o">=</span> <span class="no">Tagplay</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="sd">"</span><span class="s2">ABCDEFG:ABCDEFG:ABCDEFG"</span><span class="p">)</span>
 <span class="no">Tagplay</span><span class="o">.</span><span class="no">Project</span><span class="o">.</span><span class="n">get!</span><span class="p">(</span><span class="s1">'project_id'</span><span class="p">,</span> <span class="n">client</span><span class="p">)</span>
 </code></pre>
-
 <h3 id="http-request">HTTP Request</h3>
 
 <p><strong>GET</strong> <code class="prettyprint">/v1/project/:project_id</code></p>
@@ -435,26 +731,23 @@ They can be generate for a whole project or just a specific feed.
           <h1 id="feed">Feed</h1>
 
 <h2 id="list-feeds-in-project">List Feeds in Project</h2>
-<pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span>
   <span class="na">token</span><span class="p">:</span> <span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG'</span>
 <span class="p">});</span>
 
 <span class="nx">client</span><span class="p">.</span><span class="nx">listFeed</span><span class="p">(</span><span class="s1">'project_id'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span> <span class="c1">// json object</span>
 <span class="p">});</span>
-</code></pre>
-<pre><code class="highlight shell">curl -X GET -H <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span> <span class="se">\</span>
+</code></pre><pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span> <span class="se">\</span>
 <span class="s2">"https://api.tagplay.co/v1/project/PROJECT_ID/feed"</span>
-</code></pre>
-<pre><code class="highlight elixir"><span class="n">client</span> <span class="o">=</span> <span class="no">Tagplay</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="sd">"</span><span class="s2">ABCDEFG:ABCDEFG:ABCDEFG"</span><span class="p">)</span>
+</code></pre><pre class="highlight elixir"><code><span class="n">client</span> <span class="o">=</span> <span class="no">Tagplay</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="sd">"</span><span class="s2">ABCDEFG:ABCDEFG:ABCDEFG"</span><span class="p">)</span>
 <span class="no">Tagplay</span><span class="o">.</span><span class="no">Feed</span><span class="o">.</span><span class="n">list!</span><span class="p">(</span><span class="s1">'project_id'</span><span class="p">,</span> <span class="n">client</span><span class="p">)</span>
 </code></pre>
-
-<h3 id="http-request:">HTTP Request:</h3>
+<h3 id="http-request">HTTP Request:</h3>
 
 <p><strong>GET</strong> <code class="prettyprint">/v1/project/:project_id/feed</code></p>
 
-<h3 id="query-parameters:">Query Parameters:</h3>
+<h3 id="query-parameters">Query Parameters:</h3>
 
 <table><thead>
 <tr>
@@ -485,14 +778,12 @@ in the `pagination` key in the <a href="#data-objects">Root Object</a>.
 <p>Data will be an array of <a href="#feed">Feed</a> items.</p>
 
 <h2 id="get-feed-info">Get Feed Info</h2>
-<pre><code class="highlight shell">curl -X GET -H <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span> <span class="se">\</span>
+<pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span> <span class="se">\</span>
 <span class="s2">"https://api.tagplay.co/v1/project/PROJECT_ID/feed/FEED_ID"</span>
 
-</code></pre>
-<pre><code class="highlight elixir"><span class="n">client</span> <span class="o">=</span> <span class="no">Tagplay</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="sd">"</span><span class="s2">ABCDEFG:ABCDEFG:ABCDEFG"</span><span class="p">)</span>
+</code></pre><pre class="highlight elixir"><code><span class="n">client</span> <span class="o">=</span> <span class="no">Tagplay</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="sd">"</span><span class="s2">ABCDEFG:ABCDEFG:ABCDEFG"</span><span class="p">)</span>
 <span class="no">Tagplay</span><span class="o">.</span><span class="no">Feed</span><span class="o">.</span><span class="n">get!</span><span class="p">(</span><span class="s1">'project_id'</span><span class="p">,</span> <span class="s1">'feed_id'</span><span class="p">,</span> <span class="n">client</span><span class="p">)</span>
 </code></pre>
-
 <h3 id="http-request">HTTP Request</h3>
 
 <p><strong>GET</strong> <code class="prettyprint">/v1/project/:project_id/feed/:feed_id</code></p>
@@ -504,21 +795,18 @@ in the `pagination` key in the <a href="#data-objects">Root Object</a>.
           <h1 id="post">Post</h1>
 
 <h2 id="list-posts-in-feed">List Posts in Feed</h2>
-<pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span>
   <span class="na">token</span><span class="p">:</span> <span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG'</span>
 <span class="p">});</span>
 
 <span class="nx">client</span><span class="p">.</span><span class="nx">listPost</span><span class="p">(</span><span class="s1">'project_id'</span><span class="p">,</span> <span class="s1">'feed_id'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span> <span class="c1">// json object</span>
 <span class="p">});</span>
-</code></pre>
-<pre><code class="highlight shell">curl -X GET -H <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span> <span class="se">\</span>
+</code></pre><pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span> <span class="se">\</span>
 <span class="s2">"https://api.tagplay.co/v1/project/PROJECT_ID/feed/FEED_ID/post"</span>
-</code></pre>
-<pre><code class="highlight elixir"><span class="n">client</span> <span class="o">=</span> <span class="no">Tagplay</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="sd">"</span><span class="s2">ABCDEFG:ABCDEFG:ABCDEFG"</span><span class="p">)</span>
+</code></pre><pre class="highlight elixir"><code><span class="n">client</span> <span class="o">=</span> <span class="no">Tagplay</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="sd">"</span><span class="s2">ABCDEFG:ABCDEFG:ABCDEFG"</span><span class="p">)</span>
 <span class="no">Tagplay</span><span class="o">.</span><span class="no">Post</span><span class="o">.</span><span class="n">list!</span><span class="p">(</span><span class="s1">'project_id'</span><span class="p">,</span> <span class="s1">'feed_id'</span><span class="p">,</span> <span class="n">client</span><span class="p">)</span>
 </code></pre>
-
 <h3 id="http-request">HTTP Request</h3>
 
 <p><strong>GET</strong> <code class="prettyprint">/v1/project/:project_id/feed/:feed_id/post</code></p>
@@ -554,21 +842,18 @@ in the `pagination` key in the <a href="#data-objects">Root Object</a>.
 <p>Data will be a list of <a href="#post">Post</a> objects.</p>
 
 <h2 id="get-post">Get Post</h2>
-<pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span>
   <span class="na">token</span><span class="p">:</span> <span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG'</span>
 <span class="p">});</span>
 
 <span class="nx">client</span><span class="p">.</span><span class="nx">getPost</span><span class="p">(</span><span class="s1">'project_id'</span><span class="p">,</span> <span class="s1">'feed_id'</span><span class="p">,</span> <span class="s1">'post_id'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span> <span class="c1">// json object</span>
 <span class="p">});</span>
-</code></pre>
-<pre><code class="highlight shell">curl -X GET -H <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span> <span class="se">\</span>
+</code></pre><pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span> <span class="se">\</span>
 <span class="s2">"https://api.tagplay.co/v1/project/PROJECT_ID/feed/FEED_ID/post/POST_ID"</span>
-</code></pre>
-<pre><code class="highlight elixir"><span class="n">client</span> <span class="o">=</span> <span class="no">Tagplay</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="sd">"</span><span class="s2">ABCDEFG:ABCDEFG:ABCDEFG"</span><span class="p">)</span>
+</code></pre><pre class="highlight elixir"><code><span class="n">client</span> <span class="o">=</span> <span class="no">Tagplay</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="sd">"</span><span class="s2">ABCDEFG:ABCDEFG:ABCDEFG"</span><span class="p">)</span>
 <span class="no">Tagplay</span><span class="o">.</span><span class="no">Post</span><span class="o">.</span><span class="n">get!</span><span class="p">(</span><span class="s1">'project_id'</span><span class="p">,</span> <span class="s1">'feed_id'</span><span class="p">,</span> <span class="s1">'post_id'</span> <span class="n">client</span><span class="p">)</span>
 </code></pre>
-
 <h3 id="http-request">HTTP Request</h3>
 
 <p><strong>GET</strong> <code class="prettyprint">/v1/project/:project_id/feed/:feed_id/post/:post_id</code></p>
@@ -578,21 +863,18 @@ in the `pagination` key in the <a href="#data-objects">Root Object</a>.
 <p>Data will be a <a href="#post">Post</a> object.</p>
 
 <h2 id="flag-post">Flag Post</h2>
-<pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span>
   <span class="na">token</span><span class="p">:</span> <span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG'</span>
 <span class="p">});</span>
 
 <span class="nx">client</span><span class="p">.</span><span class="nx">flagPost</span><span class="p">(</span><span class="s1">'project_id'</span><span class="p">,</span> <span class="s1">'feed_id'</span><span class="p">,</span> <span class="s1">'post_id'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span> <span class="c1">// json object</span>
 <span class="p">});</span>
-</code></pre>
-<pre><code class="highlight shell">curl -X POST -H <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span> <span class="se">\</span>
+</code></pre><pre class="highlight shell"><code>curl -X POST -H <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span> <span class="se">\</span>
 <span class="s2">"https://api.tagplay.co/v1/project/PROJECT_ID/feed/FEED_ID/post/POST_ID/flag"</span>
-</code></pre>
-<pre><code class="highlight elixir"><span class="n">client</span> <span class="o">=</span> <span class="no">Tagplay</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="sd">"</span><span class="s2">ABCDEFG:ABCDEFG:ABCDEFG"</span><span class="p">)</span>
+</code></pre><pre class="highlight elixir"><code><span class="n">client</span> <span class="o">=</span> <span class="no">Tagplay</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="sd">"</span><span class="s2">ABCDEFG:ABCDEFG:ABCDEFG"</span><span class="p">)</span>
 <span class="no">Tagplay</span><span class="o">.</span><span class="no">Post</span><span class="o">.</span><span class="n">flag!</span><span class="p">(</span><span class="s1">'project_id'</span><span class="p">,</span> <span class="s1">'feed_id'</span><span class="p">,</span> <span class="s1">'post_id'</span> <span class="n">client</span><span class="p">)</span>
 </code></pre>
-
 <h3 id="http-request">HTTP Request</h3>
 
 <p><strong>POST</strong> <code class="prettyprint">/v1/project/:project_id/feed/:feed_id/post/:post_id/flag</code></p>
@@ -602,22 +884,19 @@ in the `pagination` key in the <a href="#data-objects">Root Object</a>.
 <p>Empty Response</p>
 
 <h2 id="unflag-post">Unflag Post</h2>
-<pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span>
   <span class="na">token</span><span class="p">:</span> <span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG'</span>
 <span class="p">});</span>
 
 <span class="nx">client</span><span class="p">.</span><span class="nx">unflagPost</span><span class="p">(</span><span class="s1">'project_id'</span><span class="p">,</span> <span class="s1">'feed_id'</span><span class="p">,</span> <span class="s1">'post_id'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span> <span class="c1">// json object</span>
 <span class="p">});</span>
-</code></pre>
-<pre><code class="highlight shell">curl -X POST -H <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span> <span class="se">\</span>
+</code></pre><pre class="highlight shell"><code>curl -X POST -H <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span> <span class="se">\</span>
 <span class="s2">"https://api.tagplay.co/v1/project/PROJECT_ID/feed/FEED_ID/post/POST_ID/unflag"</span>
 
-</code></pre>
-<pre><code class="highlight elixir"><span class="n">client</span> <span class="o">=</span> <span class="no">Tagplay</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="sd">"</span><span class="s2">ABCDEFG:ABCDEFG:ABCDEFG"</span><span class="p">)</span>
+</code></pre><pre class="highlight elixir"><code><span class="n">client</span> <span class="o">=</span> <span class="no">Tagplay</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="sd">"</span><span class="s2">ABCDEFG:ABCDEFG:ABCDEFG"</span><span class="p">)</span>
 <span class="no">Tagplay</span><span class="o">.</span><span class="no">Post</span><span class="o">.</span><span class="n">unflag!</span><span class="p">(</span><span class="s1">'project_id'</span><span class="p">,</span> <span class="s1">'feed_id'</span><span class="p">,</span> <span class="s1">'post_id'</span> <span class="n">client</span><span class="p">)</span>
 </code></pre>
-
 <h3 id="http-request">HTTP Request</h3>
 
 <p><strong>POST</strong> <code class="prettyprint">/v1/project/:project_id/feed/:feed_id/post/:post_id/unflag</code></p>
@@ -627,21 +906,18 @@ in the `pagination` key in the <a href="#data-objects">Root Object</a>.
 <p>Empty Response</p>
 
 <h2 id="like-post">Like Post</h2>
-<pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span>
   <span class="na">token</span><span class="p">:</span> <span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG
 '</span><span class="p">});</span>
 
 <span class="nx">client</span><span class="p">.</span><span class="nx">likePost</span><span class="p">(</span><span class="s1">'project_id'</span><span class="p">,</span> <span class="s1">'feed_id'</span><span class="p">,</span> <span class="s1">'post_id'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span> <span class="c1">// json object</span>
 <span class="p">});</span>
-</code></pre>
-<pre><code class="highlight shell">curl -X POST -H <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span> |
+</code></pre><pre class="highlight shell"><code>curl -X POST -H <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span> |
 <span class="s2">"https://api.tagplay.co/v1/project/PROJECT_ID/feed/FEED_ID/post/POST_ID/like"</span>
-</code></pre>
-<pre><code class="highlight elixir"><span class="n">client</span> <span class="o">=</span> <span class="no">Tagplay</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="sd">"</span><span class="s2">ABCDEFG:ABCDEFG:ABCDEFG"</span><span class="p">)</span>
+</code></pre><pre class="highlight elixir"><code><span class="n">client</span> <span class="o">=</span> <span class="no">Tagplay</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="sd">"</span><span class="s2">ABCDEFG:ABCDEFG:ABCDEFG"</span><span class="p">)</span>
 <span class="no">Tagplay</span><span class="o">.</span><span class="no">Post</span><span class="o">.</span><span class="n">like!</span><span class="p">(</span><span class="s1">'project_id'</span><span class="p">,</span> <span class="s1">'feed_id'</span><span class="p">,</span> <span class="s1">'post_id'</span> <span class="n">client</span><span class="p">)</span>
 </code></pre>
-
 <h3 id="http-request">HTTP Request</h3>
 
 <p><strong>POST</strong> <code class="prettyprint">/v1/project/:project_id/feed/:feed_id/post/:post_id/like</code></p>
@@ -650,22 +926,19 @@ in the `pagination` key in the <a href="#data-objects">Root Object</a>.
 
 <p>Empty Response</p>
 
-<h2 id="unike-post">Unike Post</h2>
-<pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span>
+<h2 id="unlike-post">Unlike Post</h2>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span>
   <span class="na">token</span><span class="p">:</span> <span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG'</span>
 <span class="p">});</span>
 
 <span class="nx">client</span><span class="p">.</span><span class="nx">unlikePost</span><span class="p">(</span><span class="s1">'project_id'</span><span class="p">,</span> <span class="s1">'feed_id'</span><span class="p">,</span> <span class="s1">'post_id'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span> <span class="c1">// json object</span>
 <span class="p">});</span>
-</code></pre>
-<pre><code class="highlight shell">curl -X POST -H <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span> <span class="se">\</span>
+</code></pre><pre class="highlight shell"><code>curl -X POST -H <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span> <span class="se">\</span>
 <span class="s2">"https://api.tagplay.co/v1/project/PROJECT_ID/feed/FEED_ID/post/POST_ID/unlike"</span>
-</code></pre>
-<pre><code class="highlight elixir"><span class="n">client</span> <span class="o">=</span> <span class="no">Tagplay</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="sd">"</span><span class="s2">ABCDEFG:ABCDEFG:ABCDEFG"</span><span class="p">)</span>
+</code></pre><pre class="highlight elixir"><code><span class="n">client</span> <span class="o">=</span> <span class="no">Tagplay</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="sd">"</span><span class="s2">ABCDEFG:ABCDEFG:ABCDEFG"</span><span class="p">)</span>
 <span class="no">Tagplay</span><span class="o">.</span><span class="no">Post</span><span class="o">.</span><span class="n">unlike!</span><span class="p">(</span><span class="s1">'project_id'</span><span class="p">,</span> <span class="s1">'feed_id'</span><span class="p">,</span> <span class="s1">'post_id'</span> <span class="n">client</span><span class="p">)</span>
 </code></pre>
-
 <h3 id="http-request">HTTP Request</h3>
 
 <p><strong>POST</strong> <code class="prettyprint">/v1/project/:project_id/feed/:feed_id/post/:post_id/unlike</code></p>
@@ -673,6 +946,48 @@ in the `pagination` key in the <a href="#data-objects">Root Object</a>.
 <h3 id="http-result">HTTP Result</h3>
 
 <p>Empty Response</p>
+
+          <h1 id="embeds">Embeds</h1>
+
+<h2 id="retrieve-embed-data-for-link">Retrieve Embed Data for Link</h2>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'tagplay'</span><span class="p">)({</span>
+  <span class="na">token</span><span class="p">:</span> <span class="s1">'ABCDEFG:ABCDEFG:ABCDEFG'</span>
+<span class="p">});</span>
+
+<span class="nx">client</span><span class="p">.</span><span class="nx">getEmbedInfo</span><span class="p">(</span><span class="s1">'http://example.com'</span><span class="p">,</span> <span class="nx">options</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span> <span class="c1">// json object</span>
+<span class="p">});</span>
+</code></pre><pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span> <span class="se">\</span>
+<span class="s2">"https://api.tagplay.co/v1/embed?url=link"</span>
+</code></pre>
+<h3 id="http-request">HTTP Request</h3>
+
+<p><strong>GET</strong> <code class="prettyprint">/v1/embed</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>url</td>
+<td>-</td>
+<td>The URL to retrieve embed information for.</td>
+</tr>
+<tr>
+<td>(other)</td>
+<td>-</td>
+<td>For more query parameters, see the <a href="https://iframely.com/docs/iframely-api">Iframely documentation</a>.</td>
+</tr>
+</tbody></table>
+
+<h3 id="http-result">HTTP Result</h3>
+
+<p>Data will be an <a href="#embed-data">Embed Data</a> object provided by our Iframely server.</p>
 
           <h1 id="libraries">Libraries</h1>
 
